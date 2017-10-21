@@ -1,5 +1,3 @@
 config/*.yml
 spec/*.rb
-lib/category.rb
-lib/news_articles.rb
-lib/news_api.rb
+lib/NBA_api.rb
