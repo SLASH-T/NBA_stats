@@ -1,0 +1,82 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.mysportsfeeds.com/v1.1/pull/nba/2017-playoff/scoreboard.json?fordate=20170416&team=GSW
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - "<MySportsFeeds_AUTH>"
+      Connection:
+      - close
+      Host:
+      - api.mysportsfeeds.com
+      User-Agent:
+      - http.rb/3.0.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 21 Oct 2017 19:09:49 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '756'
+      Connection:
+      - close
+      Set-Cookie:
+      - JSESSIONID=23914035D3B90FA0F0642067F8760E56; Path=/leaguemanager-web; HttpOnly
+      Cache-Control:
+      - must-revalidate, no-store, s-maxage=0, max-age=0, private
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, DELETE, PUT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Accept-CH, Accept-Charset, Accept-Datetime, Accept-Encoding, Accept-Ext,
+        Accept-Features, Accept-Language, Accept-Params, Accept-Ranges, Access-Control-Allow-Credentials,
+        Access-Control-Allow-Headers, Access-Control-Allow-Methods, Access-Control-Allow-Origin,
+        Access-Control-Expose-Headers, Access-Control-Max-Age, Access-Control-Request-Headers,
+        Access-Control-Request-Method, Age, Allow, Alternates, Authentication-Info,
+        Authorization, C-Ext, C-Man, C-Opt, C-PEP, C-PEP-Info, CONNECT, Cache-Control,
+        Compliance, Connection, Content-Base, Content-Disposition, Content-Encoding,
+        Content-ID, Content-Language, Content-Length, Content-Location, Content-MD5,
+        Content-Range, Content-Script-Type, Content-Security-Policy, Content-Style-Type,
+        Content-Transfer-Encoding, Content-Type, Content-Version, Cookie, Cost, DAV,
+        DELETE, DNT, DPR, Date, Default-Style, Delta-Base, Depth, Derived-From, Destination,
+        Differential-ID, Digest, ETag, Expect, Expires, Ext, From, GET, GetProfile,
+        HEAD, HTTP-date, Host, IM, If, If-Match, If-Modified-Since, If-None-Match,
+        If-Range, If-Unmodified-Since, Keep-Alive, Label, Last-Event-ID, Last-Modified,
+        Link, Location, Lock-Token, MIME-Version, Man, Max-Forwards, Media-Range,
+        Message-ID, Meter, Negotiate, Non-Compliance, OPTION, OPTIONS, OWS, Opt, Optional,
+        Ordering-Type, Origin, Overwrite, P3P, PEP, PICS-Label, POST, PUT, Pep-Info,
+        Permanent, Position, Pragma, ProfileObject, Protocol, Protocol-Query, Protocol-Request,
+        Proxy-Authenticate, Proxy-Authentication-Info, Proxy-Authorization, Proxy-Features,
+        Proxy-Instruction, Public, RWS, Range, Referer, Refresh, Resolution-Hint,
+        Resolver-Location, Retry-After, Safe, Sec-Websocket-Extensions, Sec-Websocket-Key,
+        Sec-Websocket-Origin, Sec-Websocket-Protocol, Sec-Websocket-Version, Security-Scheme,
+        Server, Set-Cookie, Set-Cookie2, SetProfile, SoapAction, Status, Status-URI,
+        Strict-Transport-Security, SubOK, Subst, Surrogate-Capability, Surrogate-Control,
+        TCN, TE, TRACE, Timeout, Title, Trailer, Transfer-Encoding, UA-Color, UA-Media,
+        UA-Pixels, UA-Resolution, UA-Windowpixels, URI, Upgrade, User-Agent, Variant-Vary,
+        Vary, Version, Via, Viewport-Width, WWW-Authenticate, Want-Digest, Warning,
+        Width, X-Content-Duration, X-Content-Security-Policy, X-Content-Type-Options,
+        X-CustomHeader, X-DNSPrefetch-Control, X-Forwarded-For, X-Forwarded-Port,
+        X-Forwarded-Proto, X-Frame-Options, X-Modified, X-OTHER, X-PING, X-PINGOTHER,
+        X-Powered-By, X-Requested-With
+    body:
+      encoding: ASCII-8BIT
+      string: '{"scoreboard":{"lastUpdatedOn":"2017-10-21 5:31:09 AM","gameScore":[{"game":{"ID":"40322","scheduleStatus":"Normal","originalDate":null,"originalTime":null,"delayedOrPostponedReason":null,"date":"2017-04-16","time":"3:30PM","awayTeam":{"ID":"97","City":"Portland","Name":"Trail
+        Blazers","Abbreviation":"POR"},"homeTeam":{"ID":"101","City":"Golden State","Name":"Warriors","Abbreviation":"GSW"},"location":"Oracle
+        Arena"},"isUnplayed":"false","isInProgress":"false","isCompleted":"true","awayScore":"109","homeScore":"121","quarterSummary":{"quarter":[{"@number":"1","awayScore":"27","homeScore":"31"},{"@number":"2","awayScore":"29","homeScore":"25"},{"@number":"3","awayScore":"32","homeScore":"32"},{"@number":"4","awayScore":"21","homeScore":"33"}]}}]}}'
+    http_version: 
+  recorded_at: Sat, 21 Oct 2017 19:09:49 GMT
+recorded_with: VCR 3.0.3

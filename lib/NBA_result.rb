@@ -41,7 +41,7 @@ stats_result['game']['homeTeam'] = game['homeTeam']['City']\
 stats_result['awayScore'] = repo['scoreboard']['gameScore'][0]['awayScore']
 stats_result['homeScore'] = repo['scoreboard']['gameScore'][0]['homeScore']
 
-# Quarter Summary
+# Points each quarter
 quarter = repo['scoreboard']['gameScore'][0]['quarterSummary']['quarter']
 # 1st Quarter
 stats_result['Quaters']['1']['awayScore'] = quarter[0]['awayScore']

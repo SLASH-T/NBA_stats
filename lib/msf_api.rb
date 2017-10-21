@@ -1,6 +1,6 @@
 require 'http'
 require_relative 'game_info.rb'
-# require_relative 'scores.rb'
+require_relative 'scores.rb'
 
 module MSFData
   module Errors
