@@ -3,9 +3,8 @@ module MSFData
   class GameInfo
     def initialize(game_data)
       @game_data = game_data
+      @game = @game_data['scoreboard']['gameScore'][0]['game']
     end
-
-    @game = @game_data['scoreboard']['gameScore'][0]['game']
 
     def date
       @game['date']

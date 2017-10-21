@@ -1,3 +1,1 @@
 config/*.yml
-spec/*.rb
-lib/NBA_api.rb

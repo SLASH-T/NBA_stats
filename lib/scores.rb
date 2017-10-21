@@ -3,6 +3,7 @@ module MSFData
   class Scores
     def initialize(scores_data)
       @scores = scores_data
+      @quarter = @scores['quarterSummary']['quarter']
     end
 
     def away_score
@@ -12,8 +13,6 @@ module MSFData
     def home_score
       @home_score = @scores['homeScore']
     end
-
-    @quarter = @scores['quarterSummary']['quarter']
 
     def away_quarter
       @away_quarter = []
