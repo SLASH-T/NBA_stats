@@ -4,6 +4,8 @@ require 'minitest/autorun'
 require 'minitest/rg'
 require 'yaml'
 require_relative '../lib/msf_api.rb'
+require 'simplecov'
+SimpleCov.start
 
 describe 'Tests if the MySportsFeeds API is correctly called' do
   SEASON = '2017-playoff'.freeze
