@@ -19,6 +19,10 @@ module MSFData
         404 => Errors::NotFound
       }.freeze
 
+      def initialize(response)
+        @response = response
+      end
+
       def successful?
         HTTP_ERROR.keys.include?(@response.code) ? false : true
       end
@@ -47,7 +51,8 @@ module MSFData
     end
 
     def call_stats_uri(uri)
-      HTTP.headers('Authorization' => @msf_token).get(uri)
+      response = HTTP.headers('Authorization' => @msf_token).get(uri)
+      Response.new(response).response_or_error
     end
   end
 end
