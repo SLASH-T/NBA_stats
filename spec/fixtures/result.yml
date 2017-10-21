@@ -1,0 +1,21 @@
+---
+game:
+  date: '2017-04-16'
+  location: Oracle Arena
+  awayTeam: Portland Trail Blazers
+  homeTeam: Golden State Warriors
+Quaters:
+  '1':
+    awayScore: '27'
+    homeScore: '31'
+  '2':
+    awayScore: '29'
+    homeScore: '25'
+  '3':
+    awayScore: '32'
+    homeScore: '32'
+  '4':
+    awayScore: '21'
+    homeScore: '33'
+awayScore: '109'
+homeScore: '121'
