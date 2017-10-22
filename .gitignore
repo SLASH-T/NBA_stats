@@ -1,4 +1,6 @@
 config/*.yml
 coverage/
 .DS_Store
+lib/.DS_Store
+lib/nba_result.rb
 spec/.DS_Store

@@ -54,7 +54,7 @@ describe 'Tests if the MySportsFeeds API is correctly called' do
       _(@stats.scores.home_score).must_equal CORRECT['homeScore']
     end
 
-    it 'Check Away Team Scores Throughout 1st Quarter' do
+    it 'Check Away Team Scores Throughout Quarters' do
       @stats = MSFData::NBAStatsAPI.new(AUTH).msf_use(SEASON, DATE, TEAM)
       path = CORRECT['Quaters']
       _(@stats.scores.away_quarter(1)).must_equal path['1']['awayScore']
@@ -63,7 +63,7 @@ describe 'Tests if the MySportsFeeds API is correctly called' do
       _(@stats.scores.away_quarter(4)).must_equal path['4']['awayScore']
     end
 
-    it 'Check Home Team Scores Throughout 1st Quarter' do
+    it 'Check Home Team Scores Throughout Quarters' do
       @stats = MSFData::NBAStatsAPI.new(AUTH).msf_use(SEASON, DATE, TEAM)
       path = CORRECT['Quaters']
       _(@stats.scores.home_quarter(1)).must_equal path['1']['homeScore']

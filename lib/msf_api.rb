@@ -2,6 +2,10 @@ require 'http'
 require_relative 'game_info.rb'
 require_relative 'scores.rb'
 
+TEST_SEASON = '2017-playoff'.freeze
+TEST_DATE = '20170416'.freeze
+TEST_TEAM = 'GSW'.freeze
+
 module MSFData
   module Errors
     # Not allowed to access resource
@@ -37,18 +41,18 @@ module MSFData
     end
 
     def msf_use(season, date, team)
-      uri = uri_path(season, date, team)
+      uri = NBAStatsAPI.uri_path(season, date, team)
       data = call_stats_uri(uri).parse
       GameInfo.new(data)
     end
 
-    private
-
-    def uri_path(season = '2017-playoff', date = '20170416', team = 'GSW')
+    def self.uri_path(season = TEST_SEASON, date = TEST_DATE, team = TEST_TEAM)
       'https://api.mysportsfeeds.com/v1.1/pull/nba/' + season\
        + '/scoreboard.json?fordate=' + date\
        + '&team=' + team
     end
+
+    private
 
     def call_stats_uri(uri)
       response = HTTP.headers('Authorization' => @msf_token).get(uri)

@@ -4,6 +4,8 @@ module MSFData
     def initialize(game_data)
       @game_data = game_data
       @game = @game_data['scoreboard']['gameScore'][0]['game']
+      @game_away ||= @game['awayTeam']
+      @game_home ||= @game['homeTeam']
     end
 
     def date
@@ -15,11 +17,11 @@ module MSFData
     end
 
     def away_team
-      @game['awayTeam']['City'] + ' ' + @game['awayTeam']['Name']
+      @away = @game_away['City'] + ' ' + @game_away['Name']
     end
 
     def home_team
-      @game['homeTeam']['City'] + ' ' + @game['homeTeam']['Name']
+      @home = @game_home['City'] + ' ' + @game_home['Name']
     end
 
     def scores
