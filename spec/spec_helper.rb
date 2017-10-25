@@ -9,6 +9,7 @@ require 'webmock'
 require_relative '../lib/msf_api.rb'
 
 SEASON = '2017-playoff'.freeze
+GAMEID = '20170416-POR-GSW'.freeze
 DATE = '20170416'.freeze
 TEAM = 'GSW'.freeze
 CONFIG = YAML.safe_load(File.read('config/secrets.yml'))
