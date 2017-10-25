@@ -1,3 +1,4 @@
+require 'rake/testtask'
 desc 'run test'
 task :spec do
   sh 'ruby spec/nba_stats_spec.rb'
@@ -8,6 +9,10 @@ task :rmvcr do
   sh 'rm spec/fixtures/cassettes/nba_stats_api.yml'
 end
 
+desc 'default'
+task :default do
+  sh 'rake -T'
+end
 
 namespace :quality do
   desc 'rubocap test'
