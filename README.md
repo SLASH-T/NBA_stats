@@ -12,3 +12,4 @@
 - nba_stats_spec.rb: test data, use VCR and test coverage
 - spec_helper.rb: save canstant and relative model
 
+### Arcitecture
