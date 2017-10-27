@@ -1,5 +1,10 @@
 # frozen_string_literal: false
 require 'dry-struct'
+#require 'dry-types'
+
+#module Types
+#  include Dry::Types.module
+#end
 
 module MSFData
   module Entity
@@ -9,7 +14,7 @@ module MSFData
       attribute :location, Types::Strict::String
       attribute :away_team, Types::Strict::String
       attribute :home_team, Types::Strict::String
-      attribute :scores, Types::Strict::Hash
+      attribute :scores, Types::Strict::String
     end
   end
 end

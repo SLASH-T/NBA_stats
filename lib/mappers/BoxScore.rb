@@ -1,5 +1,5 @@
 module MSFData
-  require_relative '../lib/PlayerInfo.rb'
+  require_relative './PlayerInfo.rb'
   # Accumulates data from the API Library MySportsFeeds
   class BoxScoreInfo
     def initialize(game_data)

@@ -1,5 +1,11 @@
 # frozen_string_literal: false
-require 'game_info.rb'
+require 'dry-types'
+require 'dry-struct'
+
+
+module Types
+  include Dry::Types.module
+end
 
 module MSFData
   module Entity
@@ -7,8 +13,8 @@ module MSFData
     class Scores < Dry::Struct
       attribute :away_score, Types::Strict::String
       attribute :home_score, Types::Strict::String
-      attribute :away_quarter, Types::Strict::Array.member(quarter)
-      attribute :home_quarter, Types::Strict::Array.member(quarter)
+      attribute :away_quarter, Types::Strict::Array
+      attribute :home_quarter, Types::Strict::Array
     end
   end
 end
