@@ -1,6 +1,7 @@
 require 'http'
-#require_relative 'game_info.rb'
-#require_relative 'scores.rb'
+#require_relative 'mappers/game_info_mapper.rb'
+#require_relative 'mappers/scores_mapper.rb'
+#require_relative 'mappers/BoxScore.rb'
 
 TEST_SEASON = '2017-playoff'.freeze
 #TEST_SEASON2 = '2017-2018-regular'.freeze
