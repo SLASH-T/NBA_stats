@@ -1,7 +1,6 @@
 require 'http'
-require_relative 'game_info.rb'
-require_relative 'scores.rb'
-require_relative 'BoxScore.rb'
+#require_relative 'game_info.rb'
+#require_relative 'scores.rb'
 
 TEST_SEASON = '2017-playoff'.freeze
 #TEST_SEASON2 = '2017-2018-regular'.freeze
@@ -46,13 +45,11 @@ module MSFData
     def msf_use(season, date, team)
       uri = NBAStatsAPI.uri_path(season, date, team)
       data = call_stats_uri(uri).parse
-      GameInfo.new(data)
     end
 
     def msf_player_use(season, gameid)
       uri = NBAStatsAPI.player_uri_path(season, gameid)
       data = call_stats_uri(uri).parse
-      BoxScoreInfo.new(data)
     end
 
     def self.uri_path(season = TEST_SEASON, date = TEST_DATE, team = TEST_TEAM)
