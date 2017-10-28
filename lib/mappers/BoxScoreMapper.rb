@@ -9,17 +9,17 @@ module MSFData
       @gateway = gateway
     end
 
-    def load (season, gameid)
+    def load_player(season, gameid)
       boxscore = @gateway.msf_player_use(season, gameid)
-      build_entity(boxscore)
+      BoxScoreMapper.build_entity(boxscore)
     end
 
-    def build_entity(boxscore)
-      DataMapper.new(boxscore, @gateway).build_entity
+    def self.build_entity(boxscore)
+      DataMapper.new(boxscore).build_entity
     end
 
     class DataMapper
-      def initialize(boxscore, gateway)
+      def initialize(boxscore)
         @boxscore = boxscore
         @away_team = @boxscore['gameboxscore']['awayTeam']
         @home_team = @boxscore['gameboxscore']['homeTeam']
@@ -40,7 +40,7 @@ module MSFData
       end
 
       def home_team_player
-        PlayerMapper.new(@away_team['homePlayers']['playerEntry']).seperate
+        PlayerMapper.new(@home_team['homePlayers']['playerEntry']).seperate
         #@home_team['homePlayers']['playerEntry'].map do |data|
          # @playerinfo = PlayerMapper.new(data)
         #end

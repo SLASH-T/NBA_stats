@@ -3,11 +3,11 @@
 module MSFData
   # Accumulates data from the API Library MySportsFeeds
   class PlayerMapper
-    def initialize(playerdata)
+    def initialize(playerdata)# array
       @playerdata = playerdata
-      @firstname = @playerdata['player']['FirstName']
-      @lastname = @playerdata['player']['LastName']
-      @stats = @playerdata['stats']
+      #@firstname = @playerdata[0]['player']['FirstName']
+      #@lastname = @playerdata[0]['player']['LastName']
+      #@stats = @playerdata[0]['stats']
     end
 
     def seperate
@@ -26,27 +26,27 @@ module MSFData
       end
 
       def build_entity
-        Entity::PlayerData.new(
+        MSFData::Entity::PlayerData.new(
           player_name: player_name,
-          FGM: FGM,
-          FGA: FGA, 
-          FGP: FGP, 
-          TPM: TPM,
-          TPP: TPP,
-          TPA: TPA,
-          FTM: FTM,
-          FTA: FTA,
-          FTP: FTP,
-          OREB: OREB,
-          DREB: DREB,
-          REB: REB,
-          AST: AST,
-          TOV: TOV,
-          STL: STL,
-          BLK: BLK,
-          PF: PF,
-          PTS: PTS,
-          PM:PM
+          FGM: fgm,
+          FGA: fga,
+          FGP: fgp,
+          TPM: tpm,
+          TPP: tpp,
+          TPA: tpa,
+          FTM: ftm,
+          FTA: fta,
+          FTP: ftp,
+          OREB: oreb,
+          DREB: dreb,
+          REB: reb,
+          AST: ast,
+          TOV: tov,
+          STL: stl,
+          BLK: blk,
+          PF: pf,
+          PTS: pts,
+          PM: pm
         )
       end
 
@@ -54,83 +54,83 @@ module MSFData
 
 
       def player_name
-        @firstname + ' ' + @lastname
+        @player_data['player']['FirstName'] + ' ' + @player_data['player']['LastName']
       end
 
-      def FGM
-        @stats['FgMade']['#text']
+      def fgm
+      @player_data['stats']['FgMade']['#text']
       end
 
-      def FGA
-        @stats['FgAtt']['#text']
+      def fga
+        @player_data['stats']['FgAtt']['#text']
       end
 
-      def FGP
-        @stats['FgPct']['#text']
+      def fgp
+        @player_data['stats']['FgPct']['#text']
       end
 
-      def TPM 
-        @stats['Fg3PtMade']['#text']
+      def tpm
+        @player_data['stats']['Fg3PtMade']['#text']
       end
 
-      def TPA 
-        @stats['Fg3PtAtt']['#text']
+      def tpa
+        @player_data['stats']['Fg3PtAtt']['#text']
       end
 
-      def TPP
-        @stats['Fg3PtPct']['#text']
+      def tpp
+        @player_data['stats']['Fg3PtPct']['#text']
       end
 
-      def FTM
-        @stats['FtMade']['#text']
+      def ftm
+        @player_data['stats']['FtMade']['#text']
       end
 
-      def FTA
-        @stats['FtAtt']['#text']
+      def fta
+        @player_data['stats']['FtAtt']['#text']
       end
 
-      def FTP
-        @stats['FtPct']['#text']
+      def ftp
+        @player_data['stats']['FtPct']['#text']
       end
 
-      def OREB
-        @stats['OffReb']['#text']
+      def oreb
+        @player_data['stats']['OffReb']['#text']
       end
 
-      def DREB
-        @stats['DefReb']['#text']
+      def dreb
+        @player_data['stats']['DefReb']['#text']
       end
 
-      def REB
-        @stats['Reb']['#text']
+      def reb
+        @player_data['stats']['Reb']['#text']
       end
 
-      def AST
-        @stats['Ast']['#text']
+      def ast
+        @player_data['stats']['Ast']['#text']
       end
 
-      def TOV
-        @stats['Tov']['#text']
+      def tov
+        @player_data['stats']['Tov']['#text']
       end
 
-      def STL
-        @stats['Stl']['#text']
+      def stl
+        @player_data['stats']['Stl']['#text']
       end
 
-      def BLK
-        @stats['Blk']['#text']
+      def blk
+        @player_data['stats']['Blk']['#text']
       end
 
-      def PF
-        @stats['FoulPers']['#text']
+      def pf
+        @player_data['stats']['FoulPers']['#text']
       end
 
-      def PTS
-        @stats['Pts']['#text']
+      def pts
+        @player_data['stats']['Pts']['#text']
       end
 
-      def PM
-        @stats['PlusMinus']['#text']
+      def pm
+        @player_data['stats']['PlusMinus']['#text']
       end
     end
   end

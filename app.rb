@@ -36,9 +36,7 @@ module MSFData
 
             # GET /api/v0.1/
             routing.is do
-              { game_info: { date: game_info.date, location: game_info.location\
-                , away_team: game_info.away_team\
-                , home_team: game_info.home_team } }
+              { game_info: { date: game_info.date, location: game_info.location, away_team: game_info.away_team, home_team: game_info.home_team } }
             end
           end
         end

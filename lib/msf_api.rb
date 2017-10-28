@@ -1,12 +1,10 @@
 require 'http'
-#require_relative 'mappers/game_info_mapper.rb'
-#require_relative 'mappers/scores_mapper.rb'
-#require_relative 'mappers/BoxScore.rb'
+# require_relative 'mappers/game_info_mapper.rb'
+# require_relative 'mappers/scores_mapper.rb'
+# require_relative 'mappers/BoxScore.rb'
 
 TEST_SEASON = '2017-playoff'.freeze
-#TEST_SEASON2 = '2017-2018-regular'.freeze
-TEST_DATE = '20170416'.freeze
-TEST_TEAM = 'GSW'.freeze
+# TEST_SEASON2 = '2017-2018-regular'.freeze
 TEST_GAMEID = '20170416-POR-GSW'.freeze
 
 module MSFData
@@ -43,20 +41,9 @@ module MSFData
       @msf_token = token
     end
 
-    def msf_use(season, date, team)
-      uri = NBAStatsAPI.uri_path(season, date, team)
-      data = call_stats_uri(uri).parse
-    end
-
     def msf_player_use(season, gameid)
       uri = NBAStatsAPI.player_uri_path(season, gameid)
-      data = call_stats_uri(uri).parse
-    end
-
-    def self.uri_path(season = TEST_SEASON, date = TEST_DATE, team = TEST_TEAM)
-      'https://api.mysportsfeeds.com/v1.1/pull/nba/' + season\
-       + '/scoreboard.json?fordate=' + date\
-       + '&team=' + team
+      call_stats_uri(uri).parse
     end
 
     def self.player_uri_path(season = TEST_SEASON, gameid = TEST_GAMEID)
