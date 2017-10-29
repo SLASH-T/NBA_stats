@@ -79,4 +79,588 @@ http_interactions:
         Arena"},"isUnplayed":"false","isInProgress":"false","isCompleted":"true","awayScore":"109","homeScore":"121","quarterSummary":{"quarter":[{"@number":"1","awayScore":"27","homeScore":"31"},{"@number":"2","awayScore":"29","homeScore":"25"},{"@number":"3","awayScore":"32","homeScore":"32"},{"@number":"4","awayScore":"21","homeScore":"33"}]}}]}}'
     http_version: 
   recorded_at: Sun, 22 Oct 2017 10:02:58 GMT
+- request:
+    method: get
+    uri: https://api.mysportsfeeds.com/v1.1/pull/nba/2017-playoff/scoreboard.json?fordate=20170416&team=GSW
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - "<MySportsFeeds_AUTH>"
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/3.0.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 29 Oct 2017 14:31:38 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '756'
+      Connection:
+      - close
+      Set-Cookie:
+      - JSESSIONID=A24EAFCF251CC43A32329ABD6A1B9351; Path=/leaguemanager-web; HttpOnly
+      Cache-Control:
+      - must-revalidate, no-store, s-maxage=0, max-age=0, private
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, DELETE, PUT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Accept-CH, Accept-Charset, Accept-Datetime, Accept-Encoding, Accept-Ext,
+        Accept-Features, Accept-Language, Accept-Params, Accept-Ranges, Access-Control-Allow-Credentials,
+        Access-Control-Allow-Headers, Access-Control-Allow-Methods, Access-Control-Allow-Origin,
+        Access-Control-Expose-Headers, Access-Control-Max-Age, Access-Control-Request-Headers,
+        Access-Control-Request-Method, Age, Allow, Alternates, Authentication-Info,
+        Authorization, C-Ext, C-Man, C-Opt, C-PEP, C-PEP-Info, CONNECT, Cache-Control,
+        Compliance, Connection, Content-Base, Content-Disposition, Content-Encoding,
+        Content-ID, Content-Language, Content-Length, Content-Location, Content-MD5,
+        Content-Range, Content-Script-Type, Content-Security-Policy, Content-Style-Type,
+        Content-Transfer-Encoding, Content-Type, Content-Version, Cookie, Cost, DAV,
+        DELETE, DNT, DPR, Date, Default-Style, Delta-Base, Depth, Derived-From, Destination,
+        Differential-ID, Digest, ETag, Expect, Expires, Ext, From, GET, GetProfile,
+        HEAD, HTTP-date, Host, IM, If, If-Match, If-Modified-Since, If-None-Match,
+        If-Range, If-Unmodified-Since, Keep-Alive, Label, Last-Event-ID, Last-Modified,
+        Link, Location, Lock-Token, MIME-Version, Man, Max-Forwards, Media-Range,
+        Message-ID, Meter, Negotiate, Non-Compliance, OPTION, OPTIONS, OWS, Opt, Optional,
+        Ordering-Type, Origin, Overwrite, P3P, PEP, PICS-Label, POST, PUT, Pep-Info,
+        Permanent, Position, Pragma, ProfileObject, Protocol, Protocol-Query, Protocol-Request,
+        Proxy-Authenticate, Proxy-Authentication-Info, Proxy-Authorization, Proxy-Features,
+        Proxy-Instruction, Public, RWS, Range, Referer, Refresh, Resolution-Hint,
+        Resolver-Location, Retry-After, Safe, Sec-Websocket-Extensions, Sec-Websocket-Key,
+        Sec-Websocket-Origin, Sec-Websocket-Protocol, Sec-Websocket-Version, Security-Scheme,
+        Server, Set-Cookie, Set-Cookie2, SetProfile, SoapAction, Status, Status-URI,
+        Strict-Transport-Security, SubOK, Subst, Surrogate-Capability, Surrogate-Control,
+        TCN, TE, TRACE, Timeout, Title, Trailer, Transfer-Encoding, UA-Color, UA-Media,
+        UA-Pixels, UA-Resolution, UA-Windowpixels, URI, Upgrade, User-Agent, Variant-Vary,
+        Vary, Version, Via, Viewport-Width, WWW-Authenticate, Want-Digest, Warning,
+        Width, X-Content-Duration, X-Content-Security-Policy, X-Content-Type-Options,
+        X-CustomHeader, X-DNSPrefetch-Control, X-Forwarded-For, X-Forwarded-Port,
+        X-Forwarded-Proto, X-Frame-Options, X-Modified, X-OTHER, X-PING, X-PINGOTHER,
+        X-Powered-By, X-Requested-With
+    body:
+      encoding: ASCII-8BIT
+      string: '{"scoreboard":{"lastUpdatedOn":"2017-10-21 5:31:09 AM","gameScore":[{"game":{"ID":"40322","scheduleStatus":"Normal","originalDate":null,"originalTime":null,"delayedOrPostponedReason":null,"date":"2017-04-16","time":"3:30PM","awayTeam":{"ID":"97","City":"Portland","Name":"Trail
+        Blazers","Abbreviation":"POR"},"homeTeam":{"ID":"101","City":"Golden State","Name":"Warriors","Abbreviation":"GSW"},"location":"Oracle
+        Arena"},"isUnplayed":"false","isInProgress":"false","isCompleted":"true","awayScore":"109","homeScore":"121","quarterSummary":{"quarter":[{"@number":"1","awayScore":"27","homeScore":"31"},{"@number":"2","awayScore":"29","homeScore":"25"},{"@number":"3","awayScore":"32","homeScore":"32"},{"@number":"4","awayScore":"21","homeScore":"33"}]}}]}}'
+    http_version: 
+  recorded_at: Sun, 29 Oct 2017 14:31:40 GMT
+- request:
+    method: get
+    uri: https://api.mysportsfeeds.com/v1.1/pull/nba/2017-playoff/scoreboard.json?fordate=incorrect_date&team=GSW
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - "<MySportsFeeds_AUTH>"
+      Connection:
+      - close
+      Host:
+      - api.mysportsfeeds.com
+      User-Agent:
+      - http.rb/3.0.0
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 29 Oct 2017 14:33:06 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Set-Cookie:
+      - JSESSIONID=C493B6EAD8EF65733093E8173DE5A8F7; Path=/leaguemanager-web; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, DELETE, PUT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Accept-CH, Accept-Charset, Accept-Datetime, Accept-Encoding, Accept-Ext,
+        Accept-Features, Accept-Language, Accept-Params, Accept-Ranges, Access-Control-Allow-Credentials,
+        Access-Control-Allow-Headers, Access-Control-Allow-Methods, Access-Control-Allow-Origin,
+        Access-Control-Expose-Headers, Access-Control-Max-Age, Access-Control-Request-Headers,
+        Access-Control-Request-Method, Age, Allow, Alternates, Authentication-Info,
+        Authorization, C-Ext, C-Man, C-Opt, C-PEP, C-PEP-Info, CONNECT, Cache-Control,
+        Compliance, Connection, Content-Base, Content-Disposition, Content-Encoding,
+        Content-ID, Content-Language, Content-Length, Content-Location, Content-MD5,
+        Content-Range, Content-Script-Type, Content-Security-Policy, Content-Style-Type,
+        Content-Transfer-Encoding, Content-Type, Content-Version, Cookie, Cost, DAV,
+        DELETE, DNT, DPR, Date, Default-Style, Delta-Base, Depth, Derived-From, Destination,
+        Differential-ID, Digest, ETag, Expect, Expires, Ext, From, GET, GetProfile,
+        HEAD, HTTP-date, Host, IM, If, If-Match, If-Modified-Since, If-None-Match,
+        If-Range, If-Unmodified-Since, Keep-Alive, Label, Last-Event-ID, Last-Modified,
+        Link, Location, Lock-Token, MIME-Version, Man, Max-Forwards, Media-Range,
+        Message-ID, Meter, Negotiate, Non-Compliance, OPTION, OPTIONS, OWS, Opt, Optional,
+        Ordering-Type, Origin, Overwrite, P3P, PEP, PICS-Label, POST, PUT, Pep-Info,
+        Permanent, Position, Pragma, ProfileObject, Protocol, Protocol-Query, Protocol-Request,
+        Proxy-Authenticate, Proxy-Authentication-Info, Proxy-Authorization, Proxy-Features,
+        Proxy-Instruction, Public, RWS, Range, Referer, Refresh, Resolution-Hint,
+        Resolver-Location, Retry-After, Safe, Sec-Websocket-Extensions, Sec-Websocket-Key,
+        Sec-Websocket-Origin, Sec-Websocket-Protocol, Sec-Websocket-Version, Security-Scheme,
+        Server, Set-Cookie, Set-Cookie2, SetProfile, SoapAction, Status, Status-URI,
+        Strict-Transport-Security, SubOK, Subst, Surrogate-Capability, Surrogate-Control,
+        TCN, TE, TRACE, Timeout, Title, Trailer, Transfer-Encoding, UA-Color, UA-Media,
+        UA-Pixels, UA-Resolution, UA-Windowpixels, URI, Upgrade, User-Agent, Variant-Vary,
+        Vary, Version, Via, Viewport-Width, WWW-Authenticate, Want-Digest, Warning,
+        Width, X-Content-Duration, X-Content-Security-Policy, X-Content-Type-Options,
+        X-CustomHeader, X-DNSPrefetch-Control, X-Forwarded-For, X-Forwarded-Port,
+        X-Forwarded-Proto, X-Frame-Options, X-Modified, X-OTHER, X-PING, X-PINGOTHER,
+        X-Powered-By, X-Requested-With
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    http_version: 
+  recorded_at: Sun, 29 Oct 2017 14:33:08 GMT
+- request:
+    method: get
+    uri: https://api.mysportsfeeds.com/v1.1/pull/nba/2017-playoff/scoreboard.json?fordate=sad_game_date&team=GSW
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - "<MySportsFeeds_AUTH>"
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/3.0.0
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 29 Oct 2017 14:45:52 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Set-Cookie:
+      - JSESSIONID=0AB0104E8C67A3AE79FB753F3190B062; Path=/leaguemanager-web; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, DELETE, PUT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Accept-CH, Accept-Charset, Accept-Datetime, Accept-Encoding, Accept-Ext,
+        Accept-Features, Accept-Language, Accept-Params, Accept-Ranges, Access-Control-Allow-Credentials,
+        Access-Control-Allow-Headers, Access-Control-Allow-Methods, Access-Control-Allow-Origin,
+        Access-Control-Expose-Headers, Access-Control-Max-Age, Access-Control-Request-Headers,
+        Access-Control-Request-Method, Age, Allow, Alternates, Authentication-Info,
+        Authorization, C-Ext, C-Man, C-Opt, C-PEP, C-PEP-Info, CONNECT, Cache-Control,
+        Compliance, Connection, Content-Base, Content-Disposition, Content-Encoding,
+        Content-ID, Content-Language, Content-Length, Content-Location, Content-MD5,
+        Content-Range, Content-Script-Type, Content-Security-Policy, Content-Style-Type,
+        Content-Transfer-Encoding, Content-Type, Content-Version, Cookie, Cost, DAV,
+        DELETE, DNT, DPR, Date, Default-Style, Delta-Base, Depth, Derived-From, Destination,
+        Differential-ID, Digest, ETag, Expect, Expires, Ext, From, GET, GetProfile,
+        HEAD, HTTP-date, Host, IM, If, If-Match, If-Modified-Since, If-None-Match,
+        If-Range, If-Unmodified-Since, Keep-Alive, Label, Last-Event-ID, Last-Modified,
+        Link, Location, Lock-Token, MIME-Version, Man, Max-Forwards, Media-Range,
+        Message-ID, Meter, Negotiate, Non-Compliance, OPTION, OPTIONS, OWS, Opt, Optional,
+        Ordering-Type, Origin, Overwrite, P3P, PEP, PICS-Label, POST, PUT, Pep-Info,
+        Permanent, Position, Pragma, ProfileObject, Protocol, Protocol-Query, Protocol-Request,
+        Proxy-Authenticate, Proxy-Authentication-Info, Proxy-Authorization, Proxy-Features,
+        Proxy-Instruction, Public, RWS, Range, Referer, Refresh, Resolution-Hint,
+        Resolver-Location, Retry-After, Safe, Sec-Websocket-Extensions, Sec-Websocket-Key,
+        Sec-Websocket-Origin, Sec-Websocket-Protocol, Sec-Websocket-Version, Security-Scheme,
+        Server, Set-Cookie, Set-Cookie2, SetProfile, SoapAction, Status, Status-URI,
+        Strict-Transport-Security, SubOK, Subst, Surrogate-Capability, Surrogate-Control,
+        TCN, TE, TRACE, Timeout, Title, Trailer, Transfer-Encoding, UA-Color, UA-Media,
+        UA-Pixels, UA-Resolution, UA-Windowpixels, URI, Upgrade, User-Agent, Variant-Vary,
+        Vary, Version, Via, Viewport-Width, WWW-Authenticate, Want-Digest, Warning,
+        Width, X-Content-Duration, X-Content-Security-Policy, X-Content-Type-Options,
+        X-CustomHeader, X-DNSPrefetch-Control, X-Forwarded-For, X-Forwarded-Port,
+        X-Forwarded-Proto, X-Frame-Options, X-Modified, X-OTHER, X-PING, X-PINGOTHER,
+        X-Powered-By, X-Requested-With
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    http_version: 
+  recorded_at: Sun, 29 Oct 2017 14:45:55 GMT
+- request:
+    method: get
+    uri: https://api.mysportsfeeds.com/v1.1/pull/nba/2017-playoff/scoreboard.json?fordate=11111111&team=GSW
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - "<MySportsFeeds_AUTH>"
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/3.0.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 29 Oct 2017 14:56:12 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '57'
+      Connection:
+      - close
+      Set-Cookie:
+      - JSESSIONID=A64489FDBE6D71FDB9F6066B91A8509C; Path=/leaguemanager-web; HttpOnly
+      Cache-Control:
+      - must-revalidate, no-store, s-maxage=0, max-age=0, private
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, DELETE, PUT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Accept-CH, Accept-Charset, Accept-Datetime, Accept-Encoding, Accept-Ext,
+        Accept-Features, Accept-Language, Accept-Params, Accept-Ranges, Access-Control-Allow-Credentials,
+        Access-Control-Allow-Headers, Access-Control-Allow-Methods, Access-Control-Allow-Origin,
+        Access-Control-Expose-Headers, Access-Control-Max-Age, Access-Control-Request-Headers,
+        Access-Control-Request-Method, Age, Allow, Alternates, Authentication-Info,
+        Authorization, C-Ext, C-Man, C-Opt, C-PEP, C-PEP-Info, CONNECT, Cache-Control,
+        Compliance, Connection, Content-Base, Content-Disposition, Content-Encoding,
+        Content-ID, Content-Language, Content-Length, Content-Location, Content-MD5,
+        Content-Range, Content-Script-Type, Content-Security-Policy, Content-Style-Type,
+        Content-Transfer-Encoding, Content-Type, Content-Version, Cookie, Cost, DAV,
+        DELETE, DNT, DPR, Date, Default-Style, Delta-Base, Depth, Derived-From, Destination,
+        Differential-ID, Digest, ETag, Expect, Expires, Ext, From, GET, GetProfile,
+        HEAD, HTTP-date, Host, IM, If, If-Match, If-Modified-Since, If-None-Match,
+        If-Range, If-Unmodified-Since, Keep-Alive, Label, Last-Event-ID, Last-Modified,
+        Link, Location, Lock-Token, MIME-Version, Man, Max-Forwards, Media-Range,
+        Message-ID, Meter, Negotiate, Non-Compliance, OPTION, OPTIONS, OWS, Opt, Optional,
+        Ordering-Type, Origin, Overwrite, P3P, PEP, PICS-Label, POST, PUT, Pep-Info,
+        Permanent, Position, Pragma, ProfileObject, Protocol, Protocol-Query, Protocol-Request,
+        Proxy-Authenticate, Proxy-Authentication-Info, Proxy-Authorization, Proxy-Features,
+        Proxy-Instruction, Public, RWS, Range, Referer, Refresh, Resolution-Hint,
+        Resolver-Location, Retry-After, Safe, Sec-Websocket-Extensions, Sec-Websocket-Key,
+        Sec-Websocket-Origin, Sec-Websocket-Protocol, Sec-Websocket-Version, Security-Scheme,
+        Server, Set-Cookie, Set-Cookie2, SetProfile, SoapAction, Status, Status-URI,
+        Strict-Transport-Security, SubOK, Subst, Surrogate-Capability, Surrogate-Control,
+        TCN, TE, TRACE, Timeout, Title, Trailer, Transfer-Encoding, UA-Color, UA-Media,
+        UA-Pixels, UA-Resolution, UA-Windowpixels, URI, Upgrade, User-Agent, Variant-Vary,
+        Vary, Version, Via, Viewport-Width, WWW-Authenticate, Want-Digest, Warning,
+        Width, X-Content-Duration, X-Content-Security-Policy, X-Content-Type-Options,
+        X-CustomHeader, X-DNSPrefetch-Control, X-Forwarded-For, X-Forwarded-Port,
+        X-Forwarded-Proto, X-Frame-Options, X-Modified, X-OTHER, X-PING, X-PINGOTHER,
+        X-Powered-By, X-Requested-With
+    body:
+      encoding: ASCII-8BIT
+      string: '{"scoreboard":{"lastUpdatedOn":"2017-10-29 10:56:12 AM"}}'
+    http_version: 
+  recorded_at: Sun, 29 Oct 2017 14:56:14 GMT
+- request:
+    method: get
+    uri: https://api.mysportsfeeds.com/v1.1/pull/nba/2017-playoff/scoreboard.json?fordate=111111G&team=GSW
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - "<MySportsFeeds_AUTH>"
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/3.0.0
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 29 Oct 2017 15:09:30 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Set-Cookie:
+      - JSESSIONID=FCAF1C6A787B02201B763709896F8DD7; Path=/leaguemanager-web; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, DELETE, PUT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Accept-CH, Accept-Charset, Accept-Datetime, Accept-Encoding, Accept-Ext,
+        Accept-Features, Accept-Language, Accept-Params, Accept-Ranges, Access-Control-Allow-Credentials,
+        Access-Control-Allow-Headers, Access-Control-Allow-Methods, Access-Control-Allow-Origin,
+        Access-Control-Expose-Headers, Access-Control-Max-Age, Access-Control-Request-Headers,
+        Access-Control-Request-Method, Age, Allow, Alternates, Authentication-Info,
+        Authorization, C-Ext, C-Man, C-Opt, C-PEP, C-PEP-Info, CONNECT, Cache-Control,
+        Compliance, Connection, Content-Base, Content-Disposition, Content-Encoding,
+        Content-ID, Content-Language, Content-Length, Content-Location, Content-MD5,
+        Content-Range, Content-Script-Type, Content-Security-Policy, Content-Style-Type,
+        Content-Transfer-Encoding, Content-Type, Content-Version, Cookie, Cost, DAV,
+        DELETE, DNT, DPR, Date, Default-Style, Delta-Base, Depth, Derived-From, Destination,
+        Differential-ID, Digest, ETag, Expect, Expires, Ext, From, GET, GetProfile,
+        HEAD, HTTP-date, Host, IM, If, If-Match, If-Modified-Since, If-None-Match,
+        If-Range, If-Unmodified-Since, Keep-Alive, Label, Last-Event-ID, Last-Modified,
+        Link, Location, Lock-Token, MIME-Version, Man, Max-Forwards, Media-Range,
+        Message-ID, Meter, Negotiate, Non-Compliance, OPTION, OPTIONS, OWS, Opt, Optional,
+        Ordering-Type, Origin, Overwrite, P3P, PEP, PICS-Label, POST, PUT, Pep-Info,
+        Permanent, Position, Pragma, ProfileObject, Protocol, Protocol-Query, Protocol-Request,
+        Proxy-Authenticate, Proxy-Authentication-Info, Proxy-Authorization, Proxy-Features,
+        Proxy-Instruction, Public, RWS, Range, Referer, Refresh, Resolution-Hint,
+        Resolver-Location, Retry-After, Safe, Sec-Websocket-Extensions, Sec-Websocket-Key,
+        Sec-Websocket-Origin, Sec-Websocket-Protocol, Sec-Websocket-Version, Security-Scheme,
+        Server, Set-Cookie, Set-Cookie2, SetProfile, SoapAction, Status, Status-URI,
+        Strict-Transport-Security, SubOK, Subst, Surrogate-Capability, Surrogate-Control,
+        TCN, TE, TRACE, Timeout, Title, Trailer, Transfer-Encoding, UA-Color, UA-Media,
+        UA-Pixels, UA-Resolution, UA-Windowpixels, URI, Upgrade, User-Agent, Variant-Vary,
+        Vary, Version, Via, Viewport-Width, WWW-Authenticate, Want-Digest, Warning,
+        Width, X-Content-Duration, X-Content-Security-Policy, X-Content-Type-Options,
+        X-CustomHeader, X-DNSPrefetch-Control, X-Forwarded-For, X-Forwarded-Port,
+        X-Forwarded-Proto, X-Frame-Options, X-Modified, X-OTHER, X-PING, X-PINGOTHER,
+        X-Powered-By, X-Requested-With
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    http_version: 
+  recorded_at: Sun, 29 Oct 2017 15:09:32 GMT
+- request:
+    method: get
+    uri: https://api.mysportsfeeds.com/v1.1/pull/nba/2017-playoff/scoreboard.json?fordate=111111&team=GSW
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - "<MySportsFeeds_AUTH>"
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/3.0.0
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 29 Oct 2017 15:09:43 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Set-Cookie:
+      - JSESSIONID=FC39510C41768FB26A9EFE7CAB2CD827; Path=/leaguemanager-web; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, DELETE, PUT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Accept-CH, Accept-Charset, Accept-Datetime, Accept-Encoding, Accept-Ext,
+        Accept-Features, Accept-Language, Accept-Params, Accept-Ranges, Access-Control-Allow-Credentials,
+        Access-Control-Allow-Headers, Access-Control-Allow-Methods, Access-Control-Allow-Origin,
+        Access-Control-Expose-Headers, Access-Control-Max-Age, Access-Control-Request-Headers,
+        Access-Control-Request-Method, Age, Allow, Alternates, Authentication-Info,
+        Authorization, C-Ext, C-Man, C-Opt, C-PEP, C-PEP-Info, CONNECT, Cache-Control,
+        Compliance, Connection, Content-Base, Content-Disposition, Content-Encoding,
+        Content-ID, Content-Language, Content-Length, Content-Location, Content-MD5,
+        Content-Range, Content-Script-Type, Content-Security-Policy, Content-Style-Type,
+        Content-Transfer-Encoding, Content-Type, Content-Version, Cookie, Cost, DAV,
+        DELETE, DNT, DPR, Date, Default-Style, Delta-Base, Depth, Derived-From, Destination,
+        Differential-ID, Digest, ETag, Expect, Expires, Ext, From, GET, GetProfile,
+        HEAD, HTTP-date, Host, IM, If, If-Match, If-Modified-Since, If-None-Match,
+        If-Range, If-Unmodified-Since, Keep-Alive, Label, Last-Event-ID, Last-Modified,
+        Link, Location, Lock-Token, MIME-Version, Man, Max-Forwards, Media-Range,
+        Message-ID, Meter, Negotiate, Non-Compliance, OPTION, OPTIONS, OWS, Opt, Optional,
+        Ordering-Type, Origin, Overwrite, P3P, PEP, PICS-Label, POST, PUT, Pep-Info,
+        Permanent, Position, Pragma, ProfileObject, Protocol, Protocol-Query, Protocol-Request,
+        Proxy-Authenticate, Proxy-Authentication-Info, Proxy-Authorization, Proxy-Features,
+        Proxy-Instruction, Public, RWS, Range, Referer, Refresh, Resolution-Hint,
+        Resolver-Location, Retry-After, Safe, Sec-Websocket-Extensions, Sec-Websocket-Key,
+        Sec-Websocket-Origin, Sec-Websocket-Protocol, Sec-Websocket-Version, Security-Scheme,
+        Server, Set-Cookie, Set-Cookie2, SetProfile, SoapAction, Status, Status-URI,
+        Strict-Transport-Security, SubOK, Subst, Surrogate-Capability, Surrogate-Control,
+        TCN, TE, TRACE, Timeout, Title, Trailer, Transfer-Encoding, UA-Color, UA-Media,
+        UA-Pixels, UA-Resolution, UA-Windowpixels, URI, Upgrade, User-Agent, Variant-Vary,
+        Vary, Version, Via, Viewport-Width, WWW-Authenticate, Want-Digest, Warning,
+        Width, X-Content-Duration, X-Content-Security-Policy, X-Content-Type-Options,
+        X-CustomHeader, X-DNSPrefetch-Control, X-Forwarded-For, X-Forwarded-Port,
+        X-Forwarded-Proto, X-Frame-Options, X-Modified, X-OTHER, X-PING, X-PINGOTHER,
+        X-Powered-By, X-Requested-With
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    http_version: 
+  recorded_at: Sun, 29 Oct 2017 15:09:46 GMT
+- request:
+    method: get
+    uri: https://api.mysportsfeeds.com/v1.1/pull/nba/ggggg/scoreboard.json?fordate=11111111&team=ffffff
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - "<MySportsFeeds_AUTH>"
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/3.0.0
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 29 Oct 2017 15:22:17 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Set-Cookie:
+      - JSESSIONID=4031E1E9DECCF4F5B3C3EB5979B8C9C0; Path=/leaguemanager-web; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, DELETE, PUT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Accept-CH, Accept-Charset, Accept-Datetime, Accept-Encoding, Accept-Ext,
+        Accept-Features, Accept-Language, Accept-Params, Accept-Ranges, Access-Control-Allow-Credentials,
+        Access-Control-Allow-Headers, Access-Control-Allow-Methods, Access-Control-Allow-Origin,
+        Access-Control-Expose-Headers, Access-Control-Max-Age, Access-Control-Request-Headers,
+        Access-Control-Request-Method, Age, Allow, Alternates, Authentication-Info,
+        Authorization, C-Ext, C-Man, C-Opt, C-PEP, C-PEP-Info, CONNECT, Cache-Control,
+        Compliance, Connection, Content-Base, Content-Disposition, Content-Encoding,
+        Content-ID, Content-Language, Content-Length, Content-Location, Content-MD5,
+        Content-Range, Content-Script-Type, Content-Security-Policy, Content-Style-Type,
+        Content-Transfer-Encoding, Content-Type, Content-Version, Cookie, Cost, DAV,
+        DELETE, DNT, DPR, Date, Default-Style, Delta-Base, Depth, Derived-From, Destination,
+        Differential-ID, Digest, ETag, Expect, Expires, Ext, From, GET, GetProfile,
+        HEAD, HTTP-date, Host, IM, If, If-Match, If-Modified-Since, If-None-Match,
+        If-Range, If-Unmodified-Since, Keep-Alive, Label, Last-Event-ID, Last-Modified,
+        Link, Location, Lock-Token, MIME-Version, Man, Max-Forwards, Media-Range,
+        Message-ID, Meter, Negotiate, Non-Compliance, OPTION, OPTIONS, OWS, Opt, Optional,
+        Ordering-Type, Origin, Overwrite, P3P, PEP, PICS-Label, POST, PUT, Pep-Info,
+        Permanent, Position, Pragma, ProfileObject, Protocol, Protocol-Query, Protocol-Request,
+        Proxy-Authenticate, Proxy-Authentication-Info, Proxy-Authorization, Proxy-Features,
+        Proxy-Instruction, Public, RWS, Range, Referer, Refresh, Resolution-Hint,
+        Resolver-Location, Retry-After, Safe, Sec-Websocket-Extensions, Sec-Websocket-Key,
+        Sec-Websocket-Origin, Sec-Websocket-Protocol, Sec-Websocket-Version, Security-Scheme,
+        Server, Set-Cookie, Set-Cookie2, SetProfile, SoapAction, Status, Status-URI,
+        Strict-Transport-Security, SubOK, Subst, Surrogate-Capability, Surrogate-Control,
+        TCN, TE, TRACE, Timeout, Title, Trailer, Transfer-Encoding, UA-Color, UA-Media,
+        UA-Pixels, UA-Resolution, UA-Windowpixels, URI, Upgrade, User-Agent, Variant-Vary,
+        Vary, Version, Via, Viewport-Width, WWW-Authenticate, Want-Digest, Warning,
+        Width, X-Content-Duration, X-Content-Security-Policy, X-Content-Type-Options,
+        X-CustomHeader, X-DNSPrefetch-Control, X-Forwarded-For, X-Forwarded-Port,
+        X-Forwarded-Proto, X-Frame-Options, X-Modified, X-OTHER, X-PING, X-PINGOTHER,
+        X-Powered-By, X-Requested-With
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    http_version: 
+  recorded_at: Sun, 29 Oct 2017 15:22:20 GMT
+- request:
+    method: get
+    uri: https://api.mysportsfeeds.com/v1.1/pull/nba/2017-playoff/scoreboard.json?fordate=11111111&team=ffffff
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - "<MySportsFeeds_AUTH>"
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/3.0.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 29 Oct 2017 15:24:22 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '57'
+      Connection:
+      - close
+      Set-Cookie:
+      - JSESSIONID=5B31046E5F6F9A30395D6364BC27460F; Path=/leaguemanager-web; HttpOnly
+      Cache-Control:
+      - must-revalidate, no-store, s-maxage=0, max-age=0, private
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, DELETE, PUT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Accept-CH, Accept-Charset, Accept-Datetime, Accept-Encoding, Accept-Ext,
+        Accept-Features, Accept-Language, Accept-Params, Accept-Ranges, Access-Control-Allow-Credentials,
+        Access-Control-Allow-Headers, Access-Control-Allow-Methods, Access-Control-Allow-Origin,
+        Access-Control-Expose-Headers, Access-Control-Max-Age, Access-Control-Request-Headers,
+        Access-Control-Request-Method, Age, Allow, Alternates, Authentication-Info,
+        Authorization, C-Ext, C-Man, C-Opt, C-PEP, C-PEP-Info, CONNECT, Cache-Control,
+        Compliance, Connection, Content-Base, Content-Disposition, Content-Encoding,
+        Content-ID, Content-Language, Content-Length, Content-Location, Content-MD5,
+        Content-Range, Content-Script-Type, Content-Security-Policy, Content-Style-Type,
+        Content-Transfer-Encoding, Content-Type, Content-Version, Cookie, Cost, DAV,
+        DELETE, DNT, DPR, Date, Default-Style, Delta-Base, Depth, Derived-From, Destination,
+        Differential-ID, Digest, ETag, Expect, Expires, Ext, From, GET, GetProfile,
+        HEAD, HTTP-date, Host, IM, If, If-Match, If-Modified-Since, If-None-Match,
+        If-Range, If-Unmodified-Since, Keep-Alive, Label, Last-Event-ID, Last-Modified,
+        Link, Location, Lock-Token, MIME-Version, Man, Max-Forwards, Media-Range,
+        Message-ID, Meter, Negotiate, Non-Compliance, OPTION, OPTIONS, OWS, Opt, Optional,
+        Ordering-Type, Origin, Overwrite, P3P, PEP, PICS-Label, POST, PUT, Pep-Info,
+        Permanent, Position, Pragma, ProfileObject, Protocol, Protocol-Query, Protocol-Request,
+        Proxy-Authenticate, Proxy-Authentication-Info, Proxy-Authorization, Proxy-Features,
+        Proxy-Instruction, Public, RWS, Range, Referer, Refresh, Resolution-Hint,
+        Resolver-Location, Retry-After, Safe, Sec-Websocket-Extensions, Sec-Websocket-Key,
+        Sec-Websocket-Origin, Sec-Websocket-Protocol, Sec-Websocket-Version, Security-Scheme,
+        Server, Set-Cookie, Set-Cookie2, SetProfile, SoapAction, Status, Status-URI,
+        Strict-Transport-Security, SubOK, Subst, Surrogate-Capability, Surrogate-Control,
+        TCN, TE, TRACE, Timeout, Title, Trailer, Transfer-Encoding, UA-Color, UA-Media,
+        UA-Pixels, UA-Resolution, UA-Windowpixels, URI, Upgrade, User-Agent, Variant-Vary,
+        Vary, Version, Via, Viewport-Width, WWW-Authenticate, Want-Digest, Warning,
+        Width, X-Content-Duration, X-Content-Security-Policy, X-Content-Type-Options,
+        X-CustomHeader, X-DNSPrefetch-Control, X-Forwarded-For, X-Forwarded-Port,
+        X-Forwarded-Proto, X-Frame-Options, X-Modified, X-OTHER, X-PING, X-PINGOTHER,
+        X-Powered-By, X-Requested-With
+    body:
+      encoding: ASCII-8BIT
+      string: '{"scoreboard":{"lastUpdatedOn":"2017-10-29 10:56:12 AM"}}'
+    http_version: 
+  recorded_at: Sun, 29 Oct 2017 15:24:25 GMT
 recorded_with: VCR 3.0.3
