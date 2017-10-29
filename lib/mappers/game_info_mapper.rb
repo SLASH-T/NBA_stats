@@ -28,7 +28,7 @@ module NBAStats
         end
 
         def build_entity
-          MSFData::Entity::GameInfo.new(
+          NBAStats::Entity::GameInfo.new(
             date: date,
             location: location,
             away_team: away_team,

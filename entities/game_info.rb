@@ -1,7 +1,7 @@
 # frozen_string_literal: false
 require 'dry-struct'
 
-module MSFData
+module NBAStats
   module Entity
     # Domain entity object for git contributors
     class GameInfo < Dry::Struct

@@ -20,7 +20,7 @@ module NBAStats
         end
 
         def build_entity
-          Entity::Scores.new(
+          NBAStats::Entity::Scores.new(
             away_quarter: away_quarter,
             home_quarter: home_quarter
           )

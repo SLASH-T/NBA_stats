@@ -1,7 +1,7 @@
 # frozen_string_literal: false
 
 # require 'game_info.rb'
-module MSFData
+module NBAStats
   module Entity
     # Domain entity object for git contributors
     class Scores < Dry::Struct

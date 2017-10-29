@@ -3,7 +3,7 @@
 require 'roda'
 require 'econfig'
 require_relative 'lib/init.rb'
-module MSFData
+module NBAStats
   # Web API
   class Api < Roda
     plugin :environments
@@ -25,11 +25,11 @@ module MSFData
       routing.on 'api' do
         # /api/v0.1 branch
         routing.on 'v0.1' do
-          routing.on 'game_info', String, String, String do |season, date, team|
-            msf_api = NBAStatsAPI.new(config.MYSPORTS_AUTH)
-            game_info_mapper = GameInfoMapper.new(msf_api)
+          routing.on 'game_info', String, String do |season, game_id|
+            msf_api = MSFData::NBAStatsAPI.new(config.MYSPORTS_AUTH)
+            game_info_mapper = MSFData::GameInfoMapper.new(msf_api)
             begin
-              game_info = game_info_mapper.load_several_game(season, date, team)
+              game_info = game_info_mapper.load(season, game_id)
             rescue StandardError
               routing.halt(404, error: 'Game info not found')
             end

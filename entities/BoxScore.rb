@@ -2,7 +2,7 @@
 
 require_relative 'PlayerData.rb'
 
-module MSFData
+module NBAStats
   module Entity
     # Domain entity object for 2 teams
     class BoxScore < Dry::Struct

@@ -4,7 +4,7 @@
 require 'dry-struct'
 #require_relative 'BoxScore.rb'
 
-module MSFData
+module NBAStats
   module Entity
     # Domain entity object for boxscore data
     class PlayerData < Dry::Struct
