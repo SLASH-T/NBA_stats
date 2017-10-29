@@ -10,16 +10,16 @@ TEST_TEAM = 'GSW'.freeze
 TEST_GAMEID = '20170416-POR-GSW'.freeze
 
 module MSFData
-  module Errors
-    # Not allowed to access resource
-    Unauthorized = Class.new(StandardError)
-    # Requested resource not found
-    NotFound = Class.new(StandardError)
-  end
-
   # makes an API call
   class NBAStatsAPI
     # Encapsulates API response success and errors
+    module Errors
+      # Not allowed to access resource
+      Unauthorized = Class.new(StandardError)
+      # Requested resource not found
+      NotFound = Class.new(StandardError)
+    end
+
     class Response
       HTTP_ERROR = {
         401 => Errors::Unauthorized,

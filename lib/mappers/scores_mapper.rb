@@ -1,15 +1,16 @@
-require_relative 'game_info_mapper.rb'
+#require_relative 'game_info_mapper.rb'
 module MSFData
   # Accumulates data from the API Library MySportsFeeds
   class Scores
-    #def initialize(gateway)
-    #  @gateway = gateway
-    #end
+    def initialize(data)
+      @data = data
+    end
 
     def load_scores(date)
     #  scores_data = @gateway.msf_use(season, date, team)
       Scores.build_entity(data)
     end
+
 
     def self.build_entity(scores_data)
       DataMapper.new(scores_data).build_entity

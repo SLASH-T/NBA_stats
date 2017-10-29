@@ -1,7 +1,14 @@
 require 'rake/testtask'
-desc 'run test'
-task :spec do
-  sh 'ruby spec/nba_stats_spec.rb'
+
+#desc 'run test'
+#task :spec do
+#  sh 'ruby spec/nba_stats_spec.rb'
+#end
+
+desc 'run tests'
+Rake::TestTask.new(:spec) do |t|
+  t.pattern = 'spec/*_spec.rb'
+  t.warning = false
 end
 
 desc 'console test'

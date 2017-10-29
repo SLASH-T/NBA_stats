@@ -1,5 +1,5 @@
 #require '../entities/game_info.rb'
-require_relative 'scores_mapper.rb'
+#require_relative 'scores_mapper.rb'
 module MSFData
   # Accumulates data from the API Library MySportsFeeds
   class GameInfoMapper
@@ -53,7 +53,7 @@ module MSFData
       end
 
       def scores
-        @scores ||= "GGGG"#Scores.load_scores(@game_data['scoreboard']['gameScore'][0])
+        @scores ||= "GGG"#Scores.load_scores(@game_data['scoreboard']['gameScore'][0])
       end
     end
   end
