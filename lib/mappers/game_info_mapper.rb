@@ -11,10 +11,10 @@ module NBAStats
 
       def load_data(season, gameid)
         game_data = @gateway.msf_player_use(season, gameid)
-        build_entity(game_data)
+        GameInfoMapper.build_entity(game_data)
       end
 
-      def build_entity(game_data)
+      def self.build_entity(game_data)
         DataMapper.new(game_data).build_entity
       end
 

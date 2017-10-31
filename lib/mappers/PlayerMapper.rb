@@ -1,5 +1,3 @@
-#require_relative '/Users/rogerxd/NBA_stats/NBA_stats/entities/PlayerData.rb'
-
 module NBAStats
   module MSFData
     # Accumulates data from the API Library MySportsFeeds
@@ -27,7 +25,7 @@ module NBAStats
         end
 
         def build_entity
-          MSFData::Entity::PlayerData.new(
+          NBAStats::Entity::PlayerData.new(
             player_name: player_name,
             FGM: fgm,
             FGA: fga,

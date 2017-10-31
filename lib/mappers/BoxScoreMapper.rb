@@ -27,21 +27,33 @@ module NBAStats
         end
 
         def build_entity
+<<<<<<< HEAD
           MSFData::Entity::BoxScore.new(
+=======
+          NBAStats::Entity::BoxScore.new(
+>>>>>>> 3d6f63ea6f4a6409a3059f28f607c395dc608257
             away_team_player: away_team_player,
             home_team_player: home_team_player
           )
         end
 
         def away_team_player
+<<<<<<< HEAD
           PlayerMapper.new(@away_team['awayPlayers']['playerEntry']).seperate
+=======
+          MSFData::PlayerMapper.new(@away_team['awayPlayers']['playerEntry']).seperate
+>>>>>>> 3d6f63ea6f4a6409a3059f28f607c395dc608257
           #@away_team['awayPlayers']['playerEntry'].map do |data|
             #@playerinfo = PlayerMapper.new(data)
           #end
         end
 
         def home_team_player
+<<<<<<< HEAD
           PlayerMapper.new(@home_team['homePlayers']['playerEntry']).seperate
+=======
+          MSFData::PlayerMapper.new(@home_team['homePlayers']['playerEntry']).seperate
+>>>>>>> 3d6f63ea6f4a6409a3059f28f607c395dc608257
           #@home_team['homePlayers']['playerEntry'].map do |data|
            # @playerinfo = PlayerMapper.new(data)
           #end

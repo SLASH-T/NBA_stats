@@ -19,7 +19,7 @@ module NBAStats
       config = Api.config
       # GET/ request
       routing.root do
-        { 'message' => "MSFData API v0.1 up in #{app.environment}" }
+        { 'message' => "NBAStats API v0.1 up in #{app.environment}" }
       end
 
       routing.on 'api' do
@@ -38,6 +38,22 @@ module NBAStats
             # GET /api/v0.1/
             routing.is do
               { game_info: { date: game_info.date, location: game_info.location, away_team: game_info.away_team, home_team: game_info.home_team } }
+            end
+          end
+
+          routing.on 'player_info', String, String do |season, gameid|
+           msf_api = MSFData::NBAStatsAPI.new(config.MYSPORTS_AUTH)
+           player_mapper = MSFData::BoxScoreMapper.new(msf_api)
+            # puts "-----------"
+            # puts player_mapper.load_player(season, gameid)
+            begin
+              player_info = player_mapper.load_player(season, gameid)
+            rescue StandardError
+              routing.halt(404, error: 'Player info not found')
+            end
+            # GET /api/v0.1/
+            routing.is do
+              { player_info: { away_team_player: player_info.away_team_player.map(&:player_name), home_team_player: player_info.home_team_player.map(&:player_name) } }
             end
           end
         end
