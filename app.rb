@@ -45,7 +45,7 @@ module NBAStats
            msf_api = MSFData::NBAStatsAPI.new(config.MYSPORTS_AUTH)
            player_mapper = MSFData::BoxScoreMapper.new(msf_api)
             # puts "-----------"
-            # puts player_mapper.load_player(season, gameid)
+            puts player_mapper.load_player(season, gameid)
             begin
               player_info = player_mapper.load_player(season, gameid)
             rescue StandardError

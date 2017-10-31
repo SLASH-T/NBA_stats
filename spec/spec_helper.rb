@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 
->>>>>>> 3d6f63ea6f4a6409a3059f28f607c395dc608257
 ENV['RACK_ENV'] = 'test'
 
 require 'simplecov'
@@ -13,17 +10,14 @@ require 'rack/test'
 require 'yaml'
 require 'vcr'
 require 'webmock'
-<<<<<<< HEAD
 # require_relative '../lib/msf_api.rb'
-=======
-#require_relative '../lib/msf_api.rb'
->>>>>>> 3d6f63ea6f4a6409a3059f28f607c395dc608257
+
 require_relative 'test_load_all'
 
 SEASON = '2017-playoff'.freeze
 GAMEID = '20170416-POR-GSW'.freeze
 CONFIG = YAML.safe_load(File.read('config/secrets.yml'))
-#AUTH = CONFIG['MYSPORTS_AUTH']
+# AUTH = CONFIG['MYSPORTS_AUTH']
 CORRECT = YAML.safe_load(File.read('spec/fixtures/result.yml'))
 
 CASSETTES_FOLDER = 'spec/fixtures/cassettes'.freeze
