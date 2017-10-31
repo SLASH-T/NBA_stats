@@ -24,9 +24,9 @@ describe 'Tests if the MySportsFeeds API is correctly called' do
 
   describe 'Tests if the Game Information is Correct' do
     it 'HAPPY: Checking Game Date' do
-      api = MSFData::NBAStatsAPI.new(GH_TOKEN)
-      game_info_mapper = MSFData::GameInfoMapper.new(api)
-      game_info = game_info_mapper.load_several_game(SEASON, DATE, TEAM)
+      api = NBAStats::MSFData::NBAStatsAPI.new(GH_TOKEN)
+      game_info_mapper = NBAStats::MSFData::GameInfoMapper.new(api)
+      game_info = game_info_mapper.load_game(SEASON, GAMEID)
       _(game_info.date).must_equal CORRECT['game']['date']
     end
 =begin
@@ -39,23 +39,23 @@ describe 'Tests if the MySportsFeeds API is correctly called' do
     end
 =end
     it 'Checking Game Location' do
-      api = MSFData::NBAStatsAPI.new(GH_TOKEN)
-      game_info_mapper = MSFData::GameInfoMapper.new(api)
-      game_info = game_info_mapper.load_several_game(SEASON, DATE, TEAM)
+      api = NBAStats::MSFData::NBAStatsAPI.new(GH_TOKEN)
+      game_info_mapper = NBAStats::MSFData::GameInfoMapper.new(api)
+      game_info = game_info_mapper.load_game(SEASON, GAMEID)
       _(game_info.location).must_equal CORRECT['game']['location']
     end
 
     it 'Check Away Team' do
-      api = MSFData::NBAStatsAPI.new(GH_TOKEN)
-      game_info_mapper = MSFData::GameInfoMapper.new(api)
-      game_info = game_info_mapper.load_several_game(SEASON, DATE, TEAM)
+      api = NBAStats::MSFData::NBAStatsAPI.new(GH_TOKEN)
+      game_info_mapper = NBAStats::MSFData::GameInfoMapper.new(api)
+      game_info = game_info_mapper.load_game(SEASON, GAMEID)
       _(game_info.away_team).must_equal CORRECT['game']['awayTeam']
     end
 
     it 'Check Home Team' do
-      api = MSFData::NBAStatsAPI.new(GH_TOKEN)
-      game_info_mapper = MSFData::GameInfoMapper.new(api)
-      game_info = game_info_mapper.load_several_game(SEASON, DATE, TEAM)
+      api = NBAStats::MSFData::NBAStatsAPI.new(GH_TOKEN)
+      game_info_mapper = NBAStats::MSFData::GameInfoMapper.new(api)
+      game_info = game_info_mapper.load_game(SEASON, GAMEID)
       _(game_info.home_team).must_equal CORRECT['game']['homeTeam']
     end
   end

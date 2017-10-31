@@ -3,7 +3,7 @@
 require 'dry-types'
 require 'dry-struct'
 
-module MSFData
+module NBAStats
   module Entity
     # Add dry types to Entity module
     module Types

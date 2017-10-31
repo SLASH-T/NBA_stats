@@ -9,8 +9,6 @@ CONFIG = YAML.safe_load(File.read('../config/secrets.yml'))
 AUTH = CONFIG['MYSPORTS_AUTH']
 #CORRECT = YAML.safe_load(File.read('spec/fixtures/result.yml'))
 
-api = MSFData::NBAStatsAPI.new(AUTH)
-boxscore_data = MSFData::BoxScoreMapper.new(api).load_player(SEASON, GAMEID)
-#data = MSFData::NBAStatsAPI.new(AUTH).msf_player_use(SEASON, GAMEID)
-#puts data.home_team_player.map(&:player_name)
+data = MSFData::NBAStatsAPI.new(AUTH).msf_player_use(SEASON, GAMEID)
+puts data.home_team_player.map(&:player_name)
 #puts data.away_team_player.map(&:FGM)
