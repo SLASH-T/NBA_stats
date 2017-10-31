@@ -28,8 +28,9 @@ module NBAStats
           routing.on 'game_info', String, String do |season, game_id|
             msf_api = MSFData::NBAStatsAPI.new(config.MYSPORTS_AUTH)
             game_info_mapper = MSFData::GameInfoMapper.new(msf_api)
+            puts game_info_mapper.load_data(season, game_id)
             begin
-              game_info = game_info_mapper.load(season, game_id)
+              game_info = game_info_mapper.load_data(season, game_id)
             rescue StandardError
               routing.halt(404, error: 'Game info not found')
             end

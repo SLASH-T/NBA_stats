@@ -1,4 +1,5 @@
 # frozen_string_literal: false
+
 require 'dry-struct'
 
 module NBAStats
@@ -9,7 +10,16 @@ module NBAStats
       attribute :location, Types::Strict::String
       attribute :away_team, Types::Strict::String
       attribute :home_team, Types::Strict::String
-      attribute :scores, Types::Strict::String
+      attribute :away_score, Types::Strict::String
+      attribute :home_score, Types::Strict::String
+      attribute :away_score_q1, Types::Strict::String
+      attribute :away_score_q2, Types::Strict::String
+      attribute :away_score_q3, Types::Strict::String
+      attribute :away_score_q4, Types::Strict::String
+      attribute :home_score_q1, Types::Strict::String
+      attribute :home_score_q2, Types::Strict::String
+      attribute :home_score_q3, Types::Strict::String
+      attribute :home_score_q4, Types::Strict::String
     end
   end
 end

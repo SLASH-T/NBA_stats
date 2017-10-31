@@ -7,5 +7,5 @@ require 'rack/test'
 include Rack::Test::Methods
 
 def app
-  MSFData::Api
+  NBAStats::Api
 end
