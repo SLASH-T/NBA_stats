@@ -26,7 +26,7 @@ describe 'Tests if the MySportsFeeds API is correctly called' do
     it 'HAPPY: Checking Game Date' do
       api = NBAStats::MSFData::NBAStatsAPI.new(GH_TOKEN)
       game_info_mapper = NBAStats::MSFData::GameInfoMapper.new(api)
-      game_info = game_info_mapper.load_game(SEASON, GAMEID)
+      game_info = game_info_mapper.load_data(SEASON, GAMEID)
       _(game_info.date).must_equal CORRECT['game']['date']
     end
 =begin
@@ -41,21 +41,21 @@ describe 'Tests if the MySportsFeeds API is correctly called' do
     it 'Checking Game Location' do
       api = NBAStats::MSFData::NBAStatsAPI.new(GH_TOKEN)
       game_info_mapper = NBAStats::MSFData::GameInfoMapper.new(api)
-      game_info = game_info_mapper.load_game(SEASON, GAMEID)
+      game_info = game_info_mapper.load_data(SEASON, GAMEID)
       _(game_info.location).must_equal CORRECT['game']['location']
     end
 
     it 'Check Away Team' do
       api = NBAStats::MSFData::NBAStatsAPI.new(GH_TOKEN)
       game_info_mapper = NBAStats::MSFData::GameInfoMapper.new(api)
-      game_info = game_info_mapper.load_game(SEASON, GAMEID)
+      game_info = game_info_mapper.load_data(SEASON, GAMEID)
       _(game_info.away_team).must_equal CORRECT['game']['awayTeam']
     end
 
     it 'Check Home Team' do
       api = NBAStats::MSFData::NBAStatsAPI.new(GH_TOKEN)
       game_info_mapper = NBAStats::MSFData::GameInfoMapper.new(api)
-      game_info = game_info_mapper.load_game(SEASON, GAMEID)
+      game_info = game_info_mapper.load_data(SEASON, GAMEID)
       _(game_info.home_team).must_equal CORRECT['game']['homeTeam']
     end
   end
