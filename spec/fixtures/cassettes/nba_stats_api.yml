@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 01 Nov 2017 16:13:10 GMT
+      - Thu, 02 Nov 2017 06:58:27 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -31,7 +31,7 @@ http_interactions:
       Connection:
       - close
       Set-Cookie:
-      - JSESSIONID=D821DB35162DCAE7682EBC96CDEEEFC0; Path=/leaguemanager-web; HttpOnly
+      - JSESSIONID=D9901B52C8A0103B7EB60A7703C95ED2; Path=/leaguemanager-web; HttpOnly
       Cache-Control:
       - must-revalidate, no-store, s-maxage=0, max-age=0, private
       Access-Control-Allow-Origin:
@@ -746,7 +746,7 @@ http_interactions:
         Throws","@abbreviation":"FTM/G","#text":"0.0"},"FtPct":{"@category":"Free
         Throws","@abbreviation":"FT%","#text":"0.0"},"OffReb":{"@category":"Rebounds","@abbreviation":"OREB","#text":"0"},"OffRebPerGame":{"@category":"Rebounds","@abbreviation":"OREB/G","#text":"0.0"},"DefReb":{"@category":"Rebounds","@abbreviation":"DREB","#text":"3"},"DefRebPerGame":{"@category":"Rebounds","@abbreviation":"DREB/G","#text":"3.0"},"Reb":{"@category":"Rebounds","@abbreviation":"REB","#text":"3"},"RebPerGame":{"@category":"Rebounds","@abbreviation":"REB/G","#text":"3.0"},"Ast":{"@category":"Offense","@abbreviation":"AST","#text":"2"},"AstPerGame":{"@category":"Offense","@abbreviation":"AST/G","#text":"2.0"},"Pts":{"@category":"Offense","@abbreviation":"PTS","#text":"0"},"PtsPerGame":{"@category":"Offense","@abbreviation":"PTS/G","#text":"0.0"},"Tov":{"@category":"Defense","@abbreviation":"TOV","#text":"1"},"TovPerGame":{"@category":"Defense","@abbreviation":"TOV/G","#text":"1.0"},"Stl":{"@category":"Defense","@abbreviation":"STL","#text":"0"},"StlPerGame":{"@category":"Defense","@abbreviation":"STL/G","#text":"0.0"},"Blk":{"@category":"Defense","@abbreviation":"BS","#text":"0"},"BlkPerGame":{"@category":"Defense","@abbreviation":"BS/G","#text":"0.0"},"BlkAgainst":{"@category":"Defense","@abbreviation":"BA","#text":"0"},"BlkAgainstPerGame":{"@category":"Defense","@abbreviation":"BA/G","#text":"0.0"},"Fouls":{"@category":"Miscellaneous","@abbreviation":"F","#text":"2"},"FoulsPerGame":{"@category":"Miscellaneous","@abbreviation":"F/G","#text":"2.0"},"FoulsDrawn":{"@category":"Miscellaneous","@abbreviation":"FD","#text":"0"},"FoulsDrawnPerGame":{"@category":"Miscellaneous","@abbreviation":"FD/G","#text":"0.0"},"FoulPers":{"@category":"Miscellaneous","@abbreviation":"PF","#text":"1"},"FoulPersPerGame":{"@category":"Miscellaneous","@abbreviation":"PF/G","#text":"1.0"},"FoulPersDrawn":{"@category":"Miscellaneous","@abbreviation":"PFD","#text":"1"},"FoulPersDrawnPerGame":{"@category":"Miscellaneous","@abbreviation":"PFD/G","#text":"1.0"},"FoulTech":{"@category":"Miscellaneous","@abbreviation":"TF","#text":"0"},"FoulTechPerGame":{"@category":"Miscellaneous","@abbreviation":"TF/G","#text":"0.0"},"FoulTechDrawn":{"@category":"Miscellaneous","@abbreviation":"TFD","#text":"0"},"FoulTechDrawnPerGame":{"@category":"Miscellaneous","@abbreviation":"TFD/G","#text":"0.0"},"FoulFlag1":{"@category":"Miscellaneous","@abbreviation":"FF1","#text":"0"},"FoulFlag1PerGame":{"@category":"Miscellaneous","@abbreviation":"FF1/G","#text":"0.0"},"FoulFlag1Drawn":{"@category":"Miscellaneous","@abbreviation":"FF1D","#text":"0"},"FoulFlag1DrawnPerGame":{"@category":"Miscellaneous","@abbreviation":"FF1D/G","#text":"0.0"},"FoulFlag2":{"@category":"Miscellaneous","@abbreviation":"FF2","#text":"0"},"FoulFlag2PerGame":{"@category":"Miscellaneous","@abbreviation":"FF2/G","#text":"0.0"},"FoulFlag2Drawn":{"@category":"Miscellaneous","@abbreviation":"FF2D","#text":"0"},"FoulFlag2DrawnPerGame":{"@category":"Miscellaneous","@abbreviation":"FF2D/G","#text":"0.0"},"Ejections":{"@category":"Miscellaneous","@abbreviation":"EJE","#text":"0"},"PlusMinus":{"@category":"Miscellaneous","@abbreviation":"+/-","#text":"3"},"PlusMinusPerGame":{"@category":"Miscellaneous","@abbreviation":"+/-/G","#text":"3.0"},"MinSeconds":{"@category":"Miscellaneous","@abbreviation":"MIN","#text":"803"},"MinSecondsPerGame":{"@category":"Miscellaneous","@abbreviation":"MIN/G","#text":"803.0"}}}]}}}}'
     http_version: 
-  recorded_at: Wed, 01 Nov 2017 16:13:18 GMT
+  recorded_at: Thu, 02 Nov 2017 06:58:27 GMT
 - request:
     method: get
     uri: https://api.mysportsfeeds.com/v1.1/pull/nba/2017-playoff/game_boxscore.json?gameid=20170416-POR-GSW
@@ -770,7 +770,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 01 Nov 2017 16:13:19 GMT
+      - Thu, 02 Nov 2017 06:58:30 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -778,7 +778,7 @@ http_interactions:
       Connection:
       - close
       Set-Cookie:
-      - JSESSIONID=CA6F2D5F29426756FEB5E80F8834B5FD; Path=/leaguemanager-web; HttpOnly
+      - JSESSIONID=B4959A8554DD2681BDA273568D4CFA74; Path=/leaguemanager-web; HttpOnly
       Cache-Control:
       - must-revalidate, no-store, s-maxage=0, max-age=0, private
       Access-Control-Allow-Origin:
@@ -1493,5 +1493,5 @@ http_interactions:
         Throws","@abbreviation":"FTM/G","#text":"0.0"},"FtPct":{"@category":"Free
         Throws","@abbreviation":"FT%","#text":"0.0"},"OffReb":{"@category":"Rebounds","@abbreviation":"OREB","#text":"0"},"OffRebPerGame":{"@category":"Rebounds","@abbreviation":"OREB/G","#text":"0.0"},"DefReb":{"@category":"Rebounds","@abbreviation":"DREB","#text":"3"},"DefRebPerGame":{"@category":"Rebounds","@abbreviation":"DREB/G","#text":"3.0"},"Reb":{"@category":"Rebounds","@abbreviation":"REB","#text":"3"},"RebPerGame":{"@category":"Rebounds","@abbreviation":"REB/G","#text":"3.0"},"Ast":{"@category":"Offense","@abbreviation":"AST","#text":"2"},"AstPerGame":{"@category":"Offense","@abbreviation":"AST/G","#text":"2.0"},"Pts":{"@category":"Offense","@abbreviation":"PTS","#text":"0"},"PtsPerGame":{"@category":"Offense","@abbreviation":"PTS/G","#text":"0.0"},"Tov":{"@category":"Defense","@abbreviation":"TOV","#text":"1"},"TovPerGame":{"@category":"Defense","@abbreviation":"TOV/G","#text":"1.0"},"Stl":{"@category":"Defense","@abbreviation":"STL","#text":"0"},"StlPerGame":{"@category":"Defense","@abbreviation":"STL/G","#text":"0.0"},"Blk":{"@category":"Defense","@abbreviation":"BS","#text":"0"},"BlkPerGame":{"@category":"Defense","@abbreviation":"BS/G","#text":"0.0"},"BlkAgainst":{"@category":"Defense","@abbreviation":"BA","#text":"0"},"BlkAgainstPerGame":{"@category":"Defense","@abbreviation":"BA/G","#text":"0.0"},"Fouls":{"@category":"Miscellaneous","@abbreviation":"F","#text":"2"},"FoulsPerGame":{"@category":"Miscellaneous","@abbreviation":"F/G","#text":"2.0"},"FoulsDrawn":{"@category":"Miscellaneous","@abbreviation":"FD","#text":"0"},"FoulsDrawnPerGame":{"@category":"Miscellaneous","@abbreviation":"FD/G","#text":"0.0"},"FoulPers":{"@category":"Miscellaneous","@abbreviation":"PF","#text":"1"},"FoulPersPerGame":{"@category":"Miscellaneous","@abbreviation":"PF/G","#text":"1.0"},"FoulPersDrawn":{"@category":"Miscellaneous","@abbreviation":"PFD","#text":"1"},"FoulPersDrawnPerGame":{"@category":"Miscellaneous","@abbreviation":"PFD/G","#text":"1.0"},"FoulTech":{"@category":"Miscellaneous","@abbreviation":"TF","#text":"0"},"FoulTechPerGame":{"@category":"Miscellaneous","@abbreviation":"TF/G","#text":"0.0"},"FoulTechDrawn":{"@category":"Miscellaneous","@abbreviation":"TFD","#text":"0"},"FoulTechDrawnPerGame":{"@category":"Miscellaneous","@abbreviation":"TFD/G","#text":"0.0"},"FoulFlag1":{"@category":"Miscellaneous","@abbreviation":"FF1","#text":"0"},"FoulFlag1PerGame":{"@category":"Miscellaneous","@abbreviation":"FF1/G","#text":"0.0"},"FoulFlag1Drawn":{"@category":"Miscellaneous","@abbreviation":"FF1D","#text":"0"},"FoulFlag1DrawnPerGame":{"@category":"Miscellaneous","@abbreviation":"FF1D/G","#text":"0.0"},"FoulFlag2":{"@category":"Miscellaneous","@abbreviation":"FF2","#text":"0"},"FoulFlag2PerGame":{"@category":"Miscellaneous","@abbreviation":"FF2/G","#text":"0.0"},"FoulFlag2Drawn":{"@category":"Miscellaneous","@abbreviation":"FF2D","#text":"0"},"FoulFlag2DrawnPerGame":{"@category":"Miscellaneous","@abbreviation":"FF2D/G","#text":"0.0"},"Ejections":{"@category":"Miscellaneous","@abbreviation":"EJE","#text":"0"},"PlusMinus":{"@category":"Miscellaneous","@abbreviation":"+/-","#text":"3"},"PlusMinusPerGame":{"@category":"Miscellaneous","@abbreviation":"+/-/G","#text":"3.0"},"MinSeconds":{"@category":"Miscellaneous","@abbreviation":"MIN","#text":"803"},"MinSecondsPerGame":{"@category":"Miscellaneous","@abbreviation":"MIN/G","#text":"803.0"}}}]}}}}'
     http_version: 
-  recorded_at: Wed, 01 Nov 2017 16:13:27 GMT
+  recorded_at: Thu, 02 Nov 2017 06:58:30 GMT
 recorded_with: VCR 3.0.3
