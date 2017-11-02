@@ -8,6 +8,9 @@ module NBAStats
   module Entity
     # Domain entity object for boxscore data
     class PlayerData < Dry::Struct
+      attribute :id, Types::Int.optional
+      attribute :origin_id, Types::Strict::Int
+      attribute :team_name, Types::Strict::String
       attribute :player_name, Types::Strict::String
       attribute :FGM, Types::Strict::String
       attribute :FGA, Types::Strict::String
