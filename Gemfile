@@ -21,7 +21,6 @@ gem 'dry-types'
 group :test do
   gem 'minitest'
   gem 'minitest-rg'
-  gem 'pry'
   gem 'rack-test'
   gem 'rake'
   gem 'simplecov'

@@ -22,7 +22,7 @@ Sequel.migration do
       String      :home_score_q2
       String      :home_score_q3
       String      :home_score_q4
-      
+
       DateTime :created_at
       DateTime :updated_at
     end

@@ -1,8 +1,8 @@
 # frozen_string_literal: false
 
-#require_relative 'init.rb'
+# require_relative 'init.rb'
 require 'dry-struct'
-#require_relative 'BoxScore.rb'
+# require_relative 'BoxScore.rb'
 
 module NBAStats
   module Entity
