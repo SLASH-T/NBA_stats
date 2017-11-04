@@ -6,6 +6,8 @@ module NBAStats
   module Entity
     # Domain entity object for git contributors
     class GameInfo < Dry::Struct
+      attribute :id, Types::Int.optional
+      attribute :origin_id, Types::Strict::Int
       attribute :date, Types::Strict::String
       attribute :location, Types::Strict::String
       attribute :away_team, Types::Strict::String

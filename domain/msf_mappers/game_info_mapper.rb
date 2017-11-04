@@ -5,12 +5,15 @@ module NBAStats
   module MSFData
     # Collects game data from the API Library MySportsFeeds
     class GameInfoMapper
-      def initialize(gateway)
-        @gateway = gateway
+      def initialize(config, gateway_class = MSFData::NBAStatsAPI)
+        @config = config
+        @gateway_class = gateway_class
+        @gateway = gateway_class.new(@config.MYSPORTS_AUTH)
       end
 
       def load_data(season, gameid)
-        game_data = @gateway.msf_player_use(season, gameid)
+        @gameid = gameid
+        game_data = @gateway.msf_player_use(season, @gameid)
         GameInfoMapper.build_entity(game_data)
       end
 
@@ -31,6 +34,8 @@ module NBAStats
 
         def build_entity
           NBAStats::Entity::GameInfo.new(
+            id: nil,
+            origin_id: origin_id,
             date: date,
             location: location,
             away_team: away_team,
@@ -49,6 +54,10 @@ module NBAStats
         end
 
         private
+
+        def origin_id
+          @gameid
+        end
 
         def date
           @game_data_mod['date']
