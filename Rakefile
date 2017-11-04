@@ -1,9 +1,32 @@
 require 'rake/testtask'
 
-#desc 'run test'
-#task :spec do
+# desc 'run test'
+# task :spec do
 #  sh 'ruby spec/nba_stats_spec.rb'
-#end
+# end
+
+namespace :db do
+  require_relative 'config/environment.rb'
+  require 'sequel'
+
+  Sequel.extension :migration
+  app = NBAStats::Api
+  desc 'run migrations'
+  task :migrate do
+    puts "Migrating #{app.environment} database to latest"
+    Sequel::Migrator.run(app.DB, 'infrastructure/database/migrations')
+  end
+
+  desc 'Drop all tables'
+  task :drop do
+    require_relative 'config/environment.rb'
+    # app.DB.drop_table
+    # Need to fill in
+  end
+
+  desc 'Reset all database table'
+  task reset: [:drop, :migrate]
+end
 
 desc 'run tests'
 Rake::TestTask.new(:spec) do |t|
