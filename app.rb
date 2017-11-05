@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'roda'
-require 'econfig'
+
 module NBAStats
   # Web API
   class Api < Roda
@@ -15,7 +15,7 @@ module NBAStats
 
     route do |routing|
       app = Api
-      config = Api.config
+
       # GET/ request
       routing.root do
         { 'message' => "NBAStats API v0.1 up in #{app.environment}" }
@@ -24,35 +24,30 @@ module NBAStats
       routing.on 'api' do
         # /api/v0.1 branch
         routing.on 'v0.1' do
+          # /api/v0.1/:season/:game_id branch
           routing.on 'game_info', String, String do |season, game_id|
-            msf_api = MSFData::NBAStatsAPI.new(config.MYSPORTS_AUTH)
-            game_info_mapper = MSFData::GameInfoMapper.new(msf_api)
-            puts game_info_mapper.load_data(season, game_id)
-            begin
-              game_info = game_info_mapper.load_data(season, game_id)
-            rescue StandardError
-              routing.halt(404, error: 'Game info not found')
-            end
+            # GET /api/v0.1/:season/:game_id request
+            routing.get do
+              game = Repository::For[Entity::GameInfo]
+                     .find_full_name(season, game_id)
 
-            # GET /api/v0.1/
-            routing.is do
-              { game_info: { date: game_info.date, location: game_info.location, away_team: game_info.away_team, home_team: game_info.home_team } }
+              routing.halt(404, error: 'Repository not found') unless game
+              game.to_h
             end
-          end
+            # POST '/api/v0.1/repo/:ownername/:reponame
+            routing.post do
+              begin
+                game = MSFData::GameInfoMapper.new(app.config)
+                                              .load_data(season, game_id)
+              rescue StandardError
+                routing.halt(404, error: 'Repo not found')
+              end
 
-          routing.on 'player_info', String, String do |season, gameid|
-           msf_api = MSFData::NBAStatsAPI.new(config.MYSPORTS_AUTH)
-           player_mapper = MSFData::BoxScoreMapper.new(msf_api)
-            # puts "-----------"
-            puts player_mapper.load_player(season, gameid)
-            begin
-              player_info = player_mapper.load_player(season, gameid)
-            rescue StandardError
-              routing.halt(404, error: 'Player info not found')
-            end
-            # GET /api/v0.1/
-            routing.is do
-              { player_info: { away_team_player: player_info.away_team_player.map(&:player_name), home_team_player: player_info.home_team_player.map(&:player_name) } }
+              # stored_game = Repository::For[game.class].find_or_create(game)
+              stored_game = Repository::GameInfos.find_or_create(game)
+              response.status = 201
+              response['Location'] = "/api/v0.1/repo/#{season}/#{game_id}"
+              stored_game.to_h
             end
           end
         end
