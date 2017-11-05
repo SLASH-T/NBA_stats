@@ -17,10 +17,10 @@ describe 'Tests Api functionality' do
   end
 
   describe 'Game information' do
-    before do
+    #before do
       # DatabaseCleaner.clean
-      Rake::Task['db:reset'].invoke
-    end
+    #  Rake::Task['db:reset'].invoke
+    #end
 
     describe 'POSTting to create entities from Github' do
       it 'HAPPY: should retrieve and store repo and collaborators' do

@@ -1,5 +1,5 @@
 
-ENV['RACK_ENV'] = 'test'
+ENV['RACK_ENV'] = 'development'
 
 require 'simplecov'
 SimpleCov.start
@@ -12,8 +12,9 @@ require 'webmock'
 # require_relative '../lib/msf_api.rb'
 
 require_relative 'test_load_all'
-load 'Rakefile'
-Rake::Task['db:reset'].invoke
+
+#load 'Rakefile'
+#Rake::Task['db:reset'].invoke
 
 SEASON = '2017-playoff'.freeze
 GAMEID = '20170416-POR-GSW'.freeze
