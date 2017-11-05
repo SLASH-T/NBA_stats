@@ -26,6 +26,17 @@ namespace :db do
 
   desc 'Reset all database table'
   task reset: [:drop, :migrate]
+
+  desc 'Delete dev or test database file'
+  task :wipe do
+    if app.environment == :production
+      puts 'Cannot wipe production database!'
+      return
+    end
+
+    FileUtils.rm(app.config.db_filename)
+    puts "Deleted #{app.config.db_filename}"
+  end
 end
 
 desc 'run tests'

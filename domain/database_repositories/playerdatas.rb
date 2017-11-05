@@ -13,9 +13,12 @@ module NBAStats
       end
 
       def self.create_form(entity)
+        db_gameinfo = Database::GameInfoOrm.first(origin_id: entity.game_id)
+
       	db_player = Database::PlayerOrm.create(
       		origin_id:   entity.origin_id,
-      		gameinfo_id: entity.gameinfo_id,
+      		gameinfo_id: db_gameinfo.id,
+          game_id:     entity.game_id,
       		team_name:   entity.team_name,
       		player_name: entity.player_name,
       		FGM:         entity.FGM,
@@ -48,6 +51,7 @@ module NBAStats
       	Entity::PlayerData.new(
       		origin_id:   db_record.origin_id,
       		gameinfo_id: db_record.gameinfo_id,
+          game_id:     db_record.game_id,
       		team_name:   db_record.team_name,
       		player_name: db_record.player_name,
       		FGM:         db_record.FGM,

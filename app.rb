@@ -26,6 +26,7 @@ module NBAStats
             routing.get do
               # game = Repository::For[Entity::GameInfo]
               # puts app.config + "------"
+
               game = Repository::GameInfos.find_game(game_id)
 
               routing.halt(404, error: 'Repository not found') unless game
@@ -34,8 +35,8 @@ module NBAStats
             # POST '/api/v0.1/repo/:ownername/:reponame
             routing.post do
               begin
-                puts "GGGG"
-                game = MSFData::GameInfoMapper.new('Basic U2xhc2hUOlNPQTIwMTc=')
+                #puts "GGGG"
+                game = MSFData::GameInfoMapper.new(app.config)
                                               .load_data(season, game_id)
               rescue StandardError
                 routing.halt(404, error: 'Repo not found')

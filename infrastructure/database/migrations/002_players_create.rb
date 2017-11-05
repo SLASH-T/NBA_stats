@@ -8,7 +8,7 @@ Sequel.migration do
       primary_key :id
       foreign_key :gameinfo_id, :gameinfos
       String      :origin_id
-
+      String      :game_id
       String      :team_name
       String      :player_name
       String      :FGM
