@@ -20,8 +20,8 @@ namespace :db do
   desc 'Drop all tables'
   task :drop do
     require_relative 'config/environment.rb'
-    # app.DB.drop_table
-    # Need to fill in
+    app.DB.drop_table :gameinfos
+    app.DB.drop_table :players
   end
 
   desc 'Reset all database table'

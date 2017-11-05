@@ -6,8 +6,8 @@ Sequel.migration do
   change do
     create_table(:players) do
       primary_key :id
-      Integer     :origin_id
       foreign_key :gameinfo_id, :gameinfos
+      String      :origin_id
 
       String      :team_name
       String      :player_name

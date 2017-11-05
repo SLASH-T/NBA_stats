@@ -13,6 +13,7 @@ module NBAStats
       end
 
       def load_player(season, gameid)
+        @gameid = gameid
         boxscore = @gateway.msf_player_use(season, gameid)
         #BoxScoreMapper.build_entity(boxscore)
         @boxscore = boxscore
@@ -46,6 +47,7 @@ module NBAStats
           NBAStats::Entity::BoxScore.new(
             id: nil,
             origin_id: origin_id,
+            game_id: game_id,
             team_name: team_name,
             player_name: player_name,
             FGM: fgm,
@@ -72,6 +74,9 @@ module NBAStats
 
         private
 
+        def game_id
+          @gameid
+        end
 
         def origin_id
           @player_data['player']['ID']

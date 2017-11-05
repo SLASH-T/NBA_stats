@@ -6,13 +6,14 @@ SimpleCov.start
 
 require 'minitest/autorun'
 require 'minitest/rg'
-require 'rack/test'
 require 'yaml'
 require 'vcr'
 require 'webmock'
 # require_relative '../lib/msf_api.rb'
 
 require_relative 'test_load_all'
+load 'Rakefile'
+Rake::Task['db:reset'].invoke
 
 SEASON = '2017-playoff'.freeze
 GAMEID = '20170416-POR-GSW'.freeze
