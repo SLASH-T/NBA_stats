@@ -6,7 +6,8 @@ Sequel.migration do
   change do
     create_table(:gameinfos) do
       primary_key :id
-      Integer     :origin_id, unique: true
+      String      :origin_id, unique: true
+      String      :game_id
 
       String      :date
       String      :location
