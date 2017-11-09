@@ -7,6 +7,10 @@ module NBAStats
       #  rebuild_entity(db_record)
       #end
 
+      def self.find(entity)
+        find_id(entity.game_id)
+      end
+
       def self.find_id(game_id)
         db_record = Database::PlayerOrm.first(game_id: game_id)
         rebuild_entity(db_record)
@@ -16,7 +20,7 @@ module NBAStats
       	db_record = Database::PlayerOrm.first(player_name: player_name)
         rebuild_entity(db_record)
       end
-      
+
       def self.find_or_create(entity)
         (find_id(entity.game_id) && find_player_name(entity.player_name)) || create_form(entity)
       end

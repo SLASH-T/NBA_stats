@@ -1,10 +1,5 @@
 require 'rake/testtask'
 
-# desc 'run test'
-# task :spec do
-#  sh 'ruby spec/nba_stats_spec.rb'
-# end
-
 namespace :db do
   require_relative 'config/environment.rb'
   require 'sequel'
@@ -43,6 +38,11 @@ desc 'run tests'
 Rake::TestTask.new(:spec) do |t|
   t.pattern = 'spec/*_spec.rb'
   t.warning = false
+end
+
+desc 'rerun tests'
+task :respec do
+  sh "rerun -c 'rake spec' --ignore 'coverage/*'"
 end
 
 desc 'console test'

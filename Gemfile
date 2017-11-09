@@ -18,6 +18,14 @@ gem 'sequel'
 gem 'dry-struct'
 gem 'dry-types'
 
+# Representers
+gem 'roar'
+gem 'multi_json'
+
+# Service
+gem 'dry-monads'
+gem 'dry-transaction'
+
 group :test do
   gem 'minitest'
   gem 'minitest-rg'
@@ -30,7 +38,7 @@ end
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'database_cleaner'
+
   gem 'pry'
   gem 'rerun'
 
