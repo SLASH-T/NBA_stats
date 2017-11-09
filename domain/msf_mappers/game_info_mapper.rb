@@ -14,16 +14,17 @@ module NBAStats
       def load_data(season, gameid)
         @gameid = gameid
         game_data = @gateway.msf_player_use(season, @gameid)
-        GameInfoMapper.build_entity(game_data)
+        GameInfoMapper.build_entity(game_data,@gameid)
       end
 
-      def self.build_entity(game_data)
-        DataMapper.new(game_data).build_entity
+      def self.build_entity(game_data,gameid)
+        DataMapper.new(game_data,gameid).build_entity
       end
 
       # Maps Game information data into initial varibles
       class DataMapper
-        def initialize(game_data)
+        def initialize(game_data,gameid)
+          @gameid = gameid
           @game_data = game_data
           @game_data_mod = @game_data['gameboxscore']['game']
           @game_away = @game_data_mod['awayTeam']
