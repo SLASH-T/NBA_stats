@@ -38,7 +38,7 @@ module NBAStats
               rescue StandardError
                 routing.halt(404, error: 'Repo not found')
               end
-              stored_game = Repository::GameInfos.create_form(game)
+              stored_game = Repository::GameInfos.find_or_create(game)
               response.status = 201
               response['Location'] = "/api/v0.1/repo/#{season}/#{game_id}"
               stored_game.to_h
@@ -62,7 +62,7 @@ module NBAStats
                 routing.halt(404, error: 'Repo not found')
               end
               players.map do |player|
-                stored_players = Repository::PlayerDatas.create_form(player)
+                stored_players = Repository::PlayerDatas.find_or_create(player)
                 response.status = 201
                 response['Location'] = "/api/v0.1/repo/#{season}/#{game_id}"
                 stored_players.to_h

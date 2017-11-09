@@ -20,12 +20,12 @@ namespace :db do
   desc 'Drop all tables'
   task :drop do
     require_relative 'config/environment.rb'
-    app.DB.drop_table :gameinfos
-    app.DB.drop_table :players
+    app.DB[:players].delete
+    app.DB[:gameinfos].delete
   end
 
   desc 'Reset all database table'
-  task reset: [:drop, :migrate]
+  task reset:[:drop, :migrate]
 
   desc 'Delete dev or test database file'
   task :wipe do

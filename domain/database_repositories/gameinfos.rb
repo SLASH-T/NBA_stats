@@ -12,7 +12,12 @@ module NBAStats
         rebuild_entity(db_record)
       end
 
+      def self.find_or_create(entity)
+        find_game(entity.origin_id) || create_form(entity)
+      end
+
       def self.create_form(entity)
+        #raise 'game already exists' if find_game(entity.origin_id)
         db_gameinfo = Database::GameInfoOrm.create(
           origin_id: entity.origin_id,
           date: entity.date,
