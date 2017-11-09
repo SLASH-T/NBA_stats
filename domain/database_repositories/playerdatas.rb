@@ -2,8 +2,13 @@ module NBAStats
   module Repository
     # Repository for Player Information
     class PlayerDatas
-      def self.find_id(id)
-        db_record = Database::PlayerOrm.first(id: id)
+      #def self.find_id(id)
+      #  db_record = Database::PlayerOrm.first(id: id)
+      #  rebuild_entity(db_record)
+      #end
+
+      def self.find_id(game_id)
+        db_record = Database::PlayerOrm.first(game_id: game_id)
         rebuild_entity(db_record)
       end
 
@@ -11,6 +16,7 @@ module NBAStats
       	db_record = Database::PlayerOrm.first(player_name: player_name)
         rebuild_entity(db_record)
       end
+
 
       def self.create_form(entity)
         db_gameinfo = Database::GameInfoOrm.first(origin_id: entity.game_id)
@@ -42,13 +48,14 @@ module NBAStats
       		PM:          entity.PM
       	)
 
-        self.rebuild_entity(db_record)
+        self.rebuild_entity(db_player)
       end
 
       def self.rebuild_entity(db_record)
       	return nil unless db_record
 
       	Entity::PlayerData.new(
+          id: db_record.id,
       		origin_id:   db_record.origin_id,
       		gameinfo_id: db_record.gameinfo_id,
           game_id:     db_record.game_id,

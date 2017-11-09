@@ -18,12 +18,13 @@ require_relative 'test_load_all'
 
 SEASON = '2017-playoff'.freeze
 GAMEID = '20170416-POR-GSW'.freeze
-CONFIG = YAML.safe_load(File.read('config/secrets.yml'))
+# CONFIG = YAML.safe_load(File.read('config/secrets.yml'))
 # AUTH = CONFIG['MYSPORTS_AUTH']
 CORRECT = YAML.safe_load(File.read('spec/fixtures/result.yml'))
 
 CASSETTES_FOLDER = 'spec/fixtures/cassettes'.freeze
 CASSETTE_FILE = 'nba_stats_api'.freeze
+#puts app.environment
 
 VCR.configure do |c|
   c.cassette_library_dir = CASSETTES_FOLDER

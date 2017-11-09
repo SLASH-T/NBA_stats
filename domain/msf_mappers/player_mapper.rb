@@ -6,10 +6,11 @@ module NBAStats
   module MSFData
     # Accumulates data from the API Library MySportsFeeds
     class BoxScoreMapper
-      def initialize(config, gateway_class = MSFDate::NBAStatsAPI)
+      def initialize(config, gateway_class = MSFData::NBAStatsAPI)
         @config = config
         @gateway_class = gateway_class
         @gateway = gateway_class.new(@config.MYSPORTS_AUTH)
+        #@gateway = @gateway
       end
 
       def load_player(season, gameid)
@@ -24,13 +25,22 @@ module NBAStats
         @home_team = @boxscore['gameboxscore']['homeTeam']
         @player_away_data = @away_team['awayPlayers']['playerEntry']
         @player_home_data = @home_team['homePlayers']['playerEntry']
+        #puts @player_home_data[0]['player']['ID']
+#begin
         @player_home_data.map do |home_data|
-          BoxScoreMapper.build_entity(home_data, @home_team_name)
+          home_data["player"]["team_name"] = @home_team_name
         end
 
         @player_away_data.map do |away_data|
-          BoxScoreMapper.build_entity(away_data, @away_team_name)
+          away_data["player"]["team_name"] = @away_team_name
         end
+
+        @player_datas = @player_home_data + @player_away_data
+
+        @player_datas.map do |player_data|
+          BoxScoreMapper.build_entity(player_data, player_data['player']['team_name'])
+        end
+
       end
 
       def self.build_entity(player_data, team_name)
@@ -44,9 +54,10 @@ module NBAStats
         end
 
         def build_entity
-          NBAStats::Entity::BoxScore.new(
+          NBAStats::Entity::PlayerData.new(
             id: nil,
             origin_id: origin_id,
+            gameinfo_id: gameinfo_id,
             game_id: game_id,
             team_name: team_name,
             player_name: player_name,
@@ -82,6 +93,10 @@ module NBAStats
           @player_data['player']['ID']
         end
 
+        def gameinfo_id
+          @game_id
+        end
+
         def player_name
           @player_data['player']['FirstName'] + ' ' + @player_data['player']['LastName']
         end
@@ -91,7 +106,7 @@ module NBAStats
         end
 
         def fgm
-        @player_data['stats']['FgMade']['#text']
+          @player_data['stats']['FgMade']['#text']
         end
 
         def fga
