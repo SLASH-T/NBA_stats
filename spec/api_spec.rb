@@ -56,7 +56,6 @@ describe 'Tests Api functionality' do
   end
 
   describe 'Player information' do
-=begin
     describe 'POSTting to create entities from Github' do
       it 'HAPPY: should retrieve and store repo and collaborators' do
         post "#{API_VER}/player_info/#{SEASON}/#{GAMEID}"
@@ -71,7 +70,6 @@ describe 'Tests Api functionality' do
         _(last_response.status).must_equal 404
       end
     end
-=end
     describe 'GETing database entities' do
       before do
         post "#{API_VER}/player_info/#{SEASON}/#{GAMEID}"

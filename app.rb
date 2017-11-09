@@ -24,8 +24,6 @@ module NBAStats
           routing.on 'game_info', String, String do |season, game_id|
             # GET /api/v0.1/:season/:game_id request
             routing.get do
-              # game = Repository::For[Entity::GameInfo]
-              # puts app.config + "------"
               game = Repository::GameInfos.find_game(game_id)
 
               routing.halt(404, error: 'Repository not found') unless game
@@ -40,8 +38,6 @@ module NBAStats
               rescue StandardError
                 routing.halt(404, error: 'Repo not found')
               end
-
-              # stored_game = Repository::For[game.class].find_or_create(game)
               stored_game = Repository::GameInfos.create_form(game)
               response.status = 201
               response['Location'] = "/api/v0.1/repo/#{season}/#{game_id}"
@@ -52,8 +48,6 @@ module NBAStats
           routing.on 'player_info', String, String do |season, game_id|
             # GET /api/v0.1/:season/:game_id request
             routing.get do
-              # game = Repository::For[Entity::GameInfo]
-              # puts app.config + "------"
               player_info = Repository::PlayerDatas.find_id(game_id)
 
               routing.halt(404, error: 'Player not found') unless player_info
@@ -62,14 +56,11 @@ module NBAStats
             # POST '/api/v0.1/repo/:ownername/:reponame
             routing.post do
               begin
-                #puts "GGGG"
                 players = MSFData::BoxScoreMapper.new(app.config)
                                               .load_player(season, game_id)
               rescue StandardError
                 routing.halt(404, error: 'Repo not found')
               end
-
-              # stored_game = Repository::For[game.class].find_or_create(game)
               players.map do |player|
                 stored_players = Repository::PlayerDatas.create_form(player)
                 response.status = 201

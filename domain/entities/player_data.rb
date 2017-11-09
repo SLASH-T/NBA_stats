@@ -10,7 +10,7 @@ module NBAStats
     class PlayerData < Dry::Struct
       attribute :id, Types::Int.optional
       attribute :origin_id, Types::Strict::String.optional
-      attribute :gameinfo_id, Types::Strict::String.optional
+      attribute :gameinfo_id, Types::Strict::Int.optional
       attribute :game_id, Types::Strict::String.optional
       attribute :team_name, Types::Strict::String.optional
       attribute :player_name, Types::Strict::String.optional

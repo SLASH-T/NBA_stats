@@ -2310,4 +2310,77 @@ http_interactions:
       string: ''
     http_version: 
   recorded_at: Sun, 05 Nov 2017 13:44:56 GMT
+- request:
+    method: get
+    uri: https://api.mysportsfeeds.com/v1.1/pull/nba/2017-playoff/game_boxscore.json?gameid=GGGameId
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - "<MySportsFeeds_AUTH>"
+      Connection:
+      - close
+      Host:
+      - api.mysportsfeeds.com
+      User-Agent:
+      - http.rb/3.0.0
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 09 Nov 2017 07:53:23 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Set-Cookie:
+      - JSESSIONID=CD6867143DE179F13F418E724D652E42; Path=/leaguemanager-web; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, DELETE, PUT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Accept-CH, Accept-Charset, Accept-Datetime, Accept-Encoding, Accept-Ext,
+        Accept-Features, Accept-Language, Accept-Params, Accept-Ranges, Access-Control-Allow-Credentials,
+        Access-Control-Allow-Headers, Access-Control-Allow-Methods, Access-Control-Allow-Origin,
+        Access-Control-Expose-Headers, Access-Control-Max-Age, Access-Control-Request-Headers,
+        Access-Control-Request-Method, Age, Allow, Alternates, Authentication-Info,
+        Authorization, C-Ext, C-Man, C-Opt, C-PEP, C-PEP-Info, CONNECT, Cache-Control,
+        Compliance, Connection, Content-Base, Content-Disposition, Content-Encoding,
+        Content-ID, Content-Language, Content-Length, Content-Location, Content-MD5,
+        Content-Range, Content-Script-Type, Content-Security-Policy, Content-Style-Type,
+        Content-Transfer-Encoding, Content-Type, Content-Version, Cookie, Cost, DAV,
+        DELETE, DNT, DPR, Date, Default-Style, Delta-Base, Depth, Derived-From, Destination,
+        Differential-ID, Digest, ETag, Expect, Expires, Ext, From, GET, GetProfile,
+        HEAD, HTTP-date, Host, IM, If, If-Match, If-Modified-Since, If-None-Match,
+        If-Range, If-Unmodified-Since, Keep-Alive, Label, Last-Event-ID, Last-Modified,
+        Link, Location, Lock-Token, MIME-Version, Man, Max-Forwards, Media-Range,
+        Message-ID, Meter, Negotiate, Non-Compliance, OPTION, OPTIONS, OWS, Opt, Optional,
+        Ordering-Type, Origin, Overwrite, P3P, PEP, PICS-Label, POST, PUT, Pep-Info,
+        Permanent, Position, Pragma, ProfileObject, Protocol, Protocol-Query, Protocol-Request,
+        Proxy-Authenticate, Proxy-Authentication-Info, Proxy-Authorization, Proxy-Features,
+        Proxy-Instruction, Public, RWS, Range, Referer, Refresh, Resolution-Hint,
+        Resolver-Location, Retry-After, Safe, Sec-Websocket-Extensions, Sec-Websocket-Key,
+        Sec-Websocket-Origin, Sec-Websocket-Protocol, Sec-Websocket-Version, Security-Scheme,
+        Server, Set-Cookie, Set-Cookie2, SetProfile, SoapAction, Status, Status-URI,
+        Strict-Transport-Security, SubOK, Subst, Surrogate-Capability, Surrogate-Control,
+        TCN, TE, TRACE, Timeout, Title, Trailer, Transfer-Encoding, UA-Color, UA-Media,
+        UA-Pixels, UA-Resolution, UA-Windowpixels, URI, Upgrade, User-Agent, Variant-Vary,
+        Vary, Version, Via, Viewport-Width, WWW-Authenticate, Want-Digest, Warning,
+        Width, X-Content-Duration, X-Content-Security-Policy, X-Content-Type-Options,
+        X-CustomHeader, X-DNSPrefetch-Control, X-Forwarded-For, X-Forwarded-Port,
+        X-Forwarded-Proto, X-Frame-Options, X-Modified, X-OTHER, X-PING, X-PINGOTHER,
+        X-Powered-By, X-Requested-With
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    http_version: 
+  recorded_at: Thu, 09 Nov 2017 07:53:23 GMT
 recorded_with: VCR 3.0.3

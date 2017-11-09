@@ -10,54 +10,54 @@ module NBAStats
         @config = config
         @gateway_class = gateway_class
         @gateway = gateway_class.new(@config.MYSPORTS_AUTH)
-        #@gateway = @gateway
       end
 
       def load_player(season, gameid)
         @gameid = gameid
-        boxscore = @gateway.msf_player_use(season, gameid)
-        #BoxScoreMapper.build_entity(boxscore)
-        @boxscore = boxscore
+        @boxscore = @gateway.msf_player_use(season, gameid)
+        # combine team_name
         @team_name = @boxscore['gameboxscore']['game']
         @away_team_name = @team_name['awayTeam']['City'] + ' ' + @team_name['awayTeam']['Name']
         @home_team_name = @team_name['homeTeam']['City'] + ' ' + @team_name['homeTeam']['Name']
+        # player_data seperate awayTeam homeTeam
         @away_team = @boxscore['gameboxscore']['awayTeam']
         @home_team = @boxscore['gameboxscore']['homeTeam']
         @player_away_data = @away_team['awayPlayers']['playerEntry']
         @player_home_data = @home_team['homePlayers']['playerEntry']
-        #puts @player_home_data[0]['player']['ID']
-#begin
+
+        # put home_team_name into player hash
         @player_home_data.map do |home_data|
           home_data["player"]["team_name"] = @home_team_name
         end
-
+        # put away_team_name into player hash
         @player_away_data.map do |away_data|
           away_data["player"]["team_name"] = @away_team_name
         end
 
         @player_datas = @player_home_data + @player_away_data
 
+        # return Entities
         @player_datas.map do |player_data|
-          BoxScoreMapper.build_entity(player_data, player_data['player']['team_name'])
+          BoxScoreMapper.build_entity(player_data, player_data['player']['team_name'], @gameid)
         end
+      end # load_player end
 
-      end
-
-      def self.build_entity(player_data, team_name)
-        DataMapper.new(player_data, team_name).build_entity
+      def self.build_entity(player_data, team_name, gameid)
+        DataMapper.new(player_data, team_name, gameid).build_entity
       end
 
       class DataMapper
-        def initialize(player_data, team_name)
+        def initialize(player_data, team_name, gameid)
           @player_data = player_data
           @team_name = team_name
+          @gameid = gameid
         end
 
         def build_entity
           NBAStats::Entity::PlayerData.new(
-            id: nil,
+            id: nil, # primary key
             origin_id: origin_id,
-            gameinfo_id: gameinfo_id,
+            gameinfo_id: nil, # foreign key
             game_id: game_id,
             team_name: team_name,
             player_name: player_name,
@@ -91,10 +91,6 @@ module NBAStats
 
         def origin_id
           @player_data['player']['ID']
-        end
-
-        def gameinfo_id
-          @game_id
         end
 
         def player_name
@@ -180,7 +176,7 @@ module NBAStats
         def pm
           @player_data['stats']['PlusMinus']['#text']
         end
-      end
-    end
+      end # DataMapper end
+    end # BoxScoreMapper end
   end
 end
