@@ -13,7 +13,7 @@ module NBAStats
 
     def get_gameinfo_from_nbastats(input)
       game_info = MSFData::GameInfoMapper.new(input[:config])
-                               .load_data(input[:season], input[:game_id])
+                                         .load_data(input[:season], input[:game_id])
       Right(game_info: game_info)
     rescue StandardError
       Left(Result.new(:bad_request, 'Remote git repository not found'))

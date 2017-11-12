@@ -8,7 +8,6 @@ module NBAStats
     plugin :json
     plugin :halt
 
-
     route do |routing|
       app = Api
 
@@ -53,7 +52,6 @@ module NBAStats
                 http_response.to_json
               end
             end
-
           end
           routing.on 'player_info', String, String do |season, game_id|
             # GET /api/v0.1/:season/:game_id request
