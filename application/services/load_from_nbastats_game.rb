@@ -14,13 +14,15 @@ module NBAStats
     def get_gameinfo_from_nbastats(input)
       game_info = MSFData::GameInfoMapper.new(input[:config])
                                          .load_data(input[:season], input[:game_id])
+
+      #puts game_info
       Right(game_info: game_info)
     rescue StandardError
-      Left(Result.new(:bad_request, 'Remote git repository not found'))
+      Left(Result.new(:bad_request, 'MSF gameinfo data not found'))
     end
 
     def check_if_gameinfo_already_loaded(input)
-      if Repository::For[input[:game_info].class].find_game(input[:game_info])
+      if Repository::For[input[:game_info].class].find(input[:game_info])
         Left(Result.new(:conflict, 'Gameinfo already loaded'))
       else
         Right(input)

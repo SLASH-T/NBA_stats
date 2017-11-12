@@ -33,7 +33,7 @@ describe 'Tests Api functionality' do
 
       it 'SAD: should report error if no Game Played found' do
         post "#{API_VER}/game_info/#{SEASON}/GGGameId"
-        _(last_response.status).must_equal 404
+        _(last_response.status).must_equal 400
       end
 
       it 'BAD: should report error if duplicate Game Info found' do

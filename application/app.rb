@@ -42,7 +42,7 @@ module NBAStats
                 season: season,
                 game_id: game_id
               )
-
+              
               http_response = HttpResponseRepresenter.new(service_result.value)
               response.status = http_response.http_code
               if service_result.success?
