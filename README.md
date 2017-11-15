@@ -1,4 +1,6 @@
 # NBA_stats
+Web API for the NBA_stats application
+[ ![Codeship Status for SLASH-T/NBA_stats](https://app.codeship.com/projects/13655d70-ac28-0135-872f-52818934e923/status?branch=master)](https://app.codeship.com/projects/256904)
 
 #### use api to get score of the game
 
