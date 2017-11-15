@@ -26,6 +26,8 @@ gem 'multi_json'
 gem 'dry-monads'
 gem 'dry-transaction'
 
+gem 'rake'
+
 group :test do
   gem 'minitest'
   gem 'minitest-rg'
@@ -34,6 +36,10 @@ group :test do
   gem 'simplecov'
   gem 'vcr'
   gem 'webmock'
+end
+
+group :production do
+  gem 'pg'
 end
 
 group :development, :test do
