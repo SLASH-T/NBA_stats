@@ -13,7 +13,7 @@ module NBAStats
 
     def get_player_from_nbastats(input)
       player = MSFData::BoxScoreMapper.new(input[:config])
-                               .load_player(input[:season], input[:game_id])
+                                      .load_player(input[:season], input[:game_id])
       Right(player: player)
     rescue StandardError
       Left(Result.new(:bad_request, 'Player not found'))

@@ -1,12 +1,10 @@
-#frozen_string_literal: true
+# frozen_string_literal: true
 
 require 'dry-monads'
 
 module NBAStats
   # Service to find a repo from our database
   # Usage:
-  #   result = FindDatabaseRepo.call(ownername: 'soumyaray', reponame: 'YPBT-app')
-  #   result.success?
   module FindDatabasePlayer
     extend Dry::Monads::Either::Mixin
     def self.call(input)

@@ -9,12 +9,11 @@ require 'minitest/rg'
 require 'yaml'
 require 'vcr'
 require 'webmock'
-# require_relative '../lib/msf_api.rb'
 
 require_relative 'test_load_all'
 
-#load 'Rakefile'
-#Rake::Task['db:reset'].invoke
+load 'Rakefile'
+Rake::Task['db:reset'].invoke
 
 SEASON = '2017-playoff'.freeze
 GAMEID = '20170416-POR-GSW'.freeze
@@ -24,7 +23,7 @@ CORRECT = YAML.safe_load(File.read('spec/fixtures/result.yml'))
 
 CASSETTES_FOLDER = 'spec/fixtures/cassettes'.freeze
 CASSETTE_FILE = 'nba_stats_api'.freeze
-#puts app.environment
+# puts app.environment
 
 VCR.configure do |c|
   c.cassette_library_dir = CASSETTES_FOLDER
