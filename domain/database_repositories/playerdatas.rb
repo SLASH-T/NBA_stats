@@ -12,8 +12,7 @@ module NBAStats
       end
 
       def self.find_id(game_id)
-        db_record = Database::PlayerOrm.first(game_id: game_id)
-        rebuild_entity(db_record)
+        Database::PlayerOrm.where(game_id: game_id).all.map { |db_record| rebuild_entity(db_record) }
       end
 
       def self.find_player_name(player_name)

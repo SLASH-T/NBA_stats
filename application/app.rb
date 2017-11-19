@@ -63,7 +63,8 @@ module NBAStats
               http_response = HttpResponseRepresenter.new(find_result.value)
               response.status = http_response.http_code
               if find_result.success?
-                PlayerRepresenter.new(find_result.value.message).to_json
+                # puts find_result.value.message
+                PlayersRepresenter.new(Players.new(find_result.value.message)).to_json
               else
                 http_response.to_json
               end
