@@ -1,7 +1,3 @@
-#require_relative '/Users/rogerxd/NBA_stats/NBA_stats/lib/mappers/PlayerMapper.rb'
-#require_relative '/Users/rogerxd/NBA_stats/NBA_stats/entities/BoxScore.rb'
-#require_relative 'PlayerMapper.rb'
-
 module NBAStats
   module MSFData
     # Accumulates data from the API Library MySportsFeeds
@@ -27,11 +23,11 @@ module NBAStats
 
         # put home_team_name into player hash
         @player_home_data.map do |home_data|
-          home_data["player"]["team_name"] = @home_team_name
+          home_data['player']['team_name'] = @home_team_name
         end
         # put away_team_name into player hash
         @player_away_data.map do |away_data|
-          away_data["player"]["team_name"] = @away_team_name
+          away_data['player']['team_name'] = @away_team_name
         end
 
         @player_datas = @player_home_data + @player_away_data
@@ -40,12 +36,13 @@ module NBAStats
         @player_datas.map do |player_data|
           BoxScoreMapper.build_entity(player_data, player_data['player']['team_name'], @gameid)
         end
-      end # load_player end
+      end
 
       def self.build_entity(player_data, team_name, gameid)
         DataMapper.new(player_data, team_name, gameid).build_entity
       end
 
+      # Maps date to db
       class DataMapper
         def initialize(player_data, team_name, gameid)
           @player_data = player_data
@@ -176,7 +173,7 @@ module NBAStats
         def pm
           @player_data['stats']['PlusMinus']['#text']
         end
-      end # DataMapper end
-    end # BoxScoreMapper end
+      end
+    end
   end
 end

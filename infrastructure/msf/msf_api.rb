@@ -47,9 +47,19 @@ module NBAStats
         call_stats_uri(uri).parse
       end
 
+      def msf_schedule(season, date)
+        uri = NBAStatsAPI.schedule_uri_path(season, date)
+        call_stats_uri(uri).parse
+      end
+
+      def self.schedule_uri_path(season, date)
+        'https://api.mysportsfeeds.com/v1.1/pull/nba/' + season\
+        + '/scoreboard.json?fordate=' + date
+      end
+
       def self.player_uri_path(season = TEST_SEASON, gameid = TEST_GAMEID)
         'https://api.mysportsfeeds.com/v1.1/pull/nba/' + season\
-         + '/game_boxscore.json?gameid=' + gameid\
+         + '/game_boxscore.json?gameid=' + gameid
       end
 
       private

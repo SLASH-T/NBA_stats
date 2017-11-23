@@ -23,7 +23,7 @@ module NBAStats
 
       # Maps Game information data into initial varibles
       class DataMapper
-        def initialize(game_data,gameid)
+        def initialize(game_data, gameid)
           @gameid = gameid
           @game_data = game_data
           @game_data_mod = @game_data['gameboxscore']['game']
