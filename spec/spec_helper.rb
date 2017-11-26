@@ -17,6 +17,7 @@ Rake::Task['db:reset'].invoke
 
 SEASON = '2017-playoff'.freeze
 GAMEID = '20170416-POR-GSW'.freeze
+DATE = '20170416'.freeze
 # CONFIG = YAML.safe_load(File.read('config/secrets.yml'))
 # AUTH = CONFIG['MYSPORTS_AUTH']
 CORRECT = YAML.safe_load(File.read('spec/fixtures/result.yml'))

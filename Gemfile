@@ -1,14 +1,18 @@
 # frozen_string_literal: false
 
 source 'https://rubygems.org'
+#ruby '2.4.2'
 
 # Networking gems
 gem 'http'
 
 # Web app related
 gem 'econfig'
+gem 'pry' # to run console in production
 gem 'puma'
+gem 'rake' # to run migration in production
 gem 'roda'
+gem 'slim'
 
 # Database related
 gem 'hirb'
@@ -38,10 +42,6 @@ group :test do
   gem 'webmock'
 end
 
-group :production do
-  gem 'pg'
-end
-
 group :development, :test do
   gem 'sqlite3'
 
@@ -51,4 +51,8 @@ group :development, :test do
   gem 'flog'
   gem 'reek'
   gem 'rubocop'
+end
+
+group :production do
+  gem 'pg'
 end

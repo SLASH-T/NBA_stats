@@ -12,7 +12,6 @@ module NBAStats
         @date = date
         @data = @gateway.msf_schedule(season, @date)
         @schedule = @data['scoreboard']['gameScore']
-
         # All game data are stored inside an array
         @schedule.map do |game_data|
           ScheduleMapper.build_entity(game_data, @date)
@@ -36,7 +35,7 @@ module NBAStats
           NBAStats::Entity::Schedule.new(
             id: nil,
             date: date,
-            location: locaiton,
+            location: location,
             away_team: away_team,
             home_team: home_team,
             gameplayed_tag: gameplayed_tag,
