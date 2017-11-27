@@ -4,7 +4,7 @@ require_relative 'spec_helper.rb'
 
 describe 'Tests Api functionality' do
   API_VER = 'api/v0.1'.freeze
-  CASSETTE_FILE = 'nba_stats_api'.freeze
+  #CASSETTE_FILE = 'nba_stats_api'.freeze
 
   before do
     VCR.insert_cassette CASSETTE_FILE,

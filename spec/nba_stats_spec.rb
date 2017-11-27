@@ -9,8 +9,8 @@ describe 'Tests if the MySportsFeeds API is correctly called' do
   Econfig.root = '.'
 
   GH_TOKEN = config.MYSPORTS_AUTH
-  CORRECT = YAML.safe_load(File.read('spec/fixtures/result.yml'))
-  CASSETTE_FILE = 'nba_stats_api'.freeze
+  #CORRECT = YAML.safe_load(File.read('spec/fixtures/result.yml'))
+  #CASSETTE_FILE = 'nba_stats_api'.freeze
 
   before do
     VCR.insert_cassette CASSETTE_FILE,
