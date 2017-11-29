@@ -42,7 +42,7 @@ module NBAStats
                 season: season,
                 game_id: game_id
               )
-              
+              #puts service_result
               http_response = HttpResponseRepresenter.new(service_result.value)
               response.status = http_response.http_code
               if service_result.success?
@@ -63,7 +63,8 @@ module NBAStats
               http_response = HttpResponseRepresenter.new(find_result.value)
               response.status = http_response.http_code
               if find_result.success?
-                # puts find_result.value.message
+                #puts "players"
+                #puts find_result.value.message
                 PlayersRepresenter.new(Players.new(find_result.value.message)).to_json
               else
                 http_response.to_json
@@ -76,12 +77,47 @@ module NBAStats
                 season: season,
                 game_id: game_id
               )
-
+              #puts service_result
               http_response = HttpResponseRepresenter.new(service_result.value)
               response.status = http_response.http_code
               if service_result.success?
                 response['Location'] = "/api/v0.1/player/#{season}/#{game_id}"
-                PlayerRepresenter.new(service_result.value.message).to_json
+                PlayersRepresenter.new(Players.new(service_result.value.message)).to_json
+              else
+                http_response.to_json
+              end
+            end
+          end
+
+          routing.on 'schedule', String, String do |season, date|
+            # GET /api/v0.1/:season/:game_id request
+            routing.get do
+              find_result = FindDatabaseSchedule.call(
+                date: date
+              )
+              #puts find_result
+              http_response = HttpResponseRepresenter.new(find_result.value)
+              response.status = http_response.http_code
+              #puts find_result.value.message.class
+              if find_result.success?
+                SchedulesRepresenter.new(Schedules.new(find_result.value.message)).to_json
+              else
+                http_response.to_json
+              end
+            end
+            # POST '/api/v0.1/repo/:ownername/:reponame
+            routing.post do
+              service_result = LoadFromSchedule.new.call(
+                config: app.config,
+                season: season,
+                date: date
+              )
+              #puts service_result
+              http_response = HttpResponseRepresenter.new(service_result.value)
+              response.status = http_response.http_code
+              if service_result.success?
+                response['Location'] = "/api/v0.1/schedule/#{season}/#{date}"
+                SchedulesRepresenter.new(Schedules.new(service_result.value.message)).to_json
               else
                 http_response.to_json
               end

@@ -20,7 +20,7 @@ module NBAStats
     end
 
     def check_if_player_already_loaded(input)
-      if Repository::For[input[:player].class].find(input[:player])
+      if Repository::PlayerDatas.find_one(input[:player])
         Left(Result.new(:conflict, 'Player already loaded'))
       else
         Right(input)
@@ -28,7 +28,9 @@ module NBAStats
     end
 
     def store_player_in_repository(input)
-      stored_player = Repository::For[input[:player].class].create_form(input[:player])
+      stored_player = []
+      input[:player].map { |x| stored_player.push(Repository::PlayerDatas.create_form(x)) }
+      #stored_player = Repository::PlayerDatas.create_form(input[:player])
       Right(Result.new(:created, stored_player))
     rescue StandardError => e
       puts e.to_s
