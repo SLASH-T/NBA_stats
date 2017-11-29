@@ -1,7 +1,7 @@
 # frozen_string_literal: false
 
 source 'https://rubygems.org'
-#ruby '2.4.2'
+# ruby '2.4.2'
 
 # Networking gems
 gem 'http'
@@ -30,13 +30,10 @@ gem 'roar'
 gem 'dry-monads'
 gem 'dry-transaction'
 
-gem 'rake'
-
 group :test do
   gem 'minitest'
   gem 'minitest-rg'
   gem 'rack-test'
-  gem 'rake'
   gem 'simplecov'
   gem 'vcr'
   gem 'webmock'
@@ -45,7 +42,6 @@ end
 group :development, :test do
   gem 'sqlite3'
 
-  gem 'pry'
   gem 'rerun'
 
   gem 'flog'
