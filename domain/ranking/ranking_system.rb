@@ -13,12 +13,13 @@ module NBAStats
       private
 
       def player_rank(player_data)
-        score = (player_data.PTS + 0.7 * player_data.OREB + 0.3\
-        * player_data.DREB + 0.7 * player_data.AST + player_data.STL + 0.7\
-        * player_data.BLK) + 0.4 * player_data.FGM - 0.7 * player_data.FGA\
-        - 0.4 * (player_data.FTA - player_data.FTM)
+        score = (player_data.PTS.to_f + 0.7 * player_data.OREB.to_f + 0.3\
+        * player_data.DREB.to_f + 0.7 * player_data.AST.to_f\
+        + player_data.STL.to_f + 0.7 * player_data.BLK.to_f) + 0.4 * \
+        player_data.FGM.to_f - 0.7 * player_data.FGA.to_f\
+        - 0.4 * (player_data.FTA.to_f - player_data.FTM.to_f)
 
-        RankingRules.new(player_data, score).adjustment
+        Rules.new(player_data, score).adjustment
       end
     end
   end

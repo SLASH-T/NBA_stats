@@ -21,7 +21,10 @@ describe 'Tests if the MySportsFeeds API is correctly called' do
     it 'HAPPY: Checking Game Date' do
       player = NBAStats::MSFData::BoxScoreMapper.new(app.config)
       info = player.load_player(SEASON, GAMEID)
-      puts info
+      info.each do |game_player|
+        puts game_player.player_name
+        puts NBAStats::Ranking::RankingSystem.new(game_player).ranking
+      end
     end
   end
 end
