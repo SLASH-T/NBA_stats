@@ -31,6 +31,7 @@ module NBAStats
       stored_player = []
       input[:player].map { |x| stored_player.push(Repository::PlayerDatas.create_form(x)) }
       #stored_player = Repository::PlayerDatas.create_form(input[:player])
+
       Right(Result.new(:created, stored_player))
     rescue StandardError => e
       puts e.to_s

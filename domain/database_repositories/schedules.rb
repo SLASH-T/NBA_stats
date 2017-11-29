@@ -13,7 +13,7 @@ module NBAStats
 
       def self.find_schedule(date)
         puts "&&&&&&"
-        Database::ScheduleOrm.where(date: date).all.map { |db_record|  puts db_record }
+        Database::ScheduleOrm.where(date: date).all.map { |db_record|  rebuild_entity(db_record) }
         #db_record = Database::ScheduleOrm.first(date: date)
         #puts db_record.class
         #rebuild_entity(db_record)

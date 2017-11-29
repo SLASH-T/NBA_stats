@@ -11,8 +11,6 @@ http_interactions:
       - "<MySportsFeeds_AUTH>"
       Connection:
       - close
-      Host:
-      - api.mysportsfeeds.com
       User-Agent:
       - http.rb/3.0.0
   response:
@@ -23,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 29 Nov 2017 07:46:48 GMT
+      - Wed, 29 Nov 2017 11:41:39 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -31,7 +29,7 @@ http_interactions:
       Connection:
       - close
       Set-Cookie:
-      - JSESSIONID=E471A43827153AA35D4C87AAE152E004; Path=/leaguemanager-web; HttpOnly
+      - JSESSIONID=BCAD76FFA560AF6FE2A51B8A9B3817BF; Path=/leaguemanager-web; HttpOnly
       Cache-Control:
       - must-revalidate, no-store, s-maxage=0, max-age=0, private
       Access-Control-Allow-Origin:
@@ -746,7 +744,88 @@ http_interactions:
         Throws","@abbreviation":"FTM/G","#text":"0.0"},"FtPct":{"@category":"Free
         Throws","@abbreviation":"FT%","#text":"0.0"},"OffReb":{"@category":"Rebounds","@abbreviation":"OREB","#text":"0"},"OffRebPerGame":{"@category":"Rebounds","@abbreviation":"OREB/G","#text":"0.0"},"DefReb":{"@category":"Rebounds","@abbreviation":"DREB","#text":"3"},"DefRebPerGame":{"@category":"Rebounds","@abbreviation":"DREB/G","#text":"3.0"},"Reb":{"@category":"Rebounds","@abbreviation":"REB","#text":"3"},"RebPerGame":{"@category":"Rebounds","@abbreviation":"REB/G","#text":"3.0"},"Ast":{"@category":"Offense","@abbreviation":"AST","#text":"2"},"AstPerGame":{"@category":"Offense","@abbreviation":"AST/G","#text":"2.0"},"Pts":{"@category":"Offense","@abbreviation":"PTS","#text":"0"},"PtsPerGame":{"@category":"Offense","@abbreviation":"PTS/G","#text":"0.0"},"Tov":{"@category":"Defense","@abbreviation":"TOV","#text":"1"},"TovPerGame":{"@category":"Defense","@abbreviation":"TOV/G","#text":"1.0"},"Stl":{"@category":"Defense","@abbreviation":"STL","#text":"0"},"StlPerGame":{"@category":"Defense","@abbreviation":"STL/G","#text":"0.0"},"Blk":{"@category":"Defense","@abbreviation":"BS","#text":"0"},"BlkPerGame":{"@category":"Defense","@abbreviation":"BS/G","#text":"0.0"},"BlkAgainst":{"@category":"Defense","@abbreviation":"BA","#text":"0"},"BlkAgainstPerGame":{"@category":"Defense","@abbreviation":"BA/G","#text":"0.0"},"Fouls":{"@category":"Miscellaneous","@abbreviation":"F","#text":"2"},"FoulsPerGame":{"@category":"Miscellaneous","@abbreviation":"F/G","#text":"2.0"},"FoulsDrawn":{"@category":"Miscellaneous","@abbreviation":"FD","#text":"0"},"FoulsDrawnPerGame":{"@category":"Miscellaneous","@abbreviation":"FD/G","#text":"0.0"},"FoulPers":{"@category":"Miscellaneous","@abbreviation":"PF","#text":"1"},"FoulPersPerGame":{"@category":"Miscellaneous","@abbreviation":"PF/G","#text":"1.0"},"FoulPersDrawn":{"@category":"Miscellaneous","@abbreviation":"PFD","#text":"1"},"FoulPersDrawnPerGame":{"@category":"Miscellaneous","@abbreviation":"PFD/G","#text":"1.0"},"FoulTech":{"@category":"Miscellaneous","@abbreviation":"TF","#text":"0"},"FoulTechPerGame":{"@category":"Miscellaneous","@abbreviation":"TF/G","#text":"0.0"},"FoulTechDrawn":{"@category":"Miscellaneous","@abbreviation":"TFD","#text":"0"},"FoulTechDrawnPerGame":{"@category":"Miscellaneous","@abbreviation":"TFD/G","#text":"0.0"},"FoulFlag1":{"@category":"Miscellaneous","@abbreviation":"FF1","#text":"0"},"FoulFlag1PerGame":{"@category":"Miscellaneous","@abbreviation":"FF1/G","#text":"0.0"},"FoulFlag1Drawn":{"@category":"Miscellaneous","@abbreviation":"FF1D","#text":"0"},"FoulFlag1DrawnPerGame":{"@category":"Miscellaneous","@abbreviation":"FF1D/G","#text":"0.0"},"FoulFlag2":{"@category":"Miscellaneous","@abbreviation":"FF2","#text":"0"},"FoulFlag2PerGame":{"@category":"Miscellaneous","@abbreviation":"FF2/G","#text":"0.0"},"FoulFlag2Drawn":{"@category":"Miscellaneous","@abbreviation":"FF2D","#text":"0"},"FoulFlag2DrawnPerGame":{"@category":"Miscellaneous","@abbreviation":"FF2D/G","#text":"0.0"},"Ejections":{"@category":"Miscellaneous","@abbreviation":"EJE","#text":"0"},"PlusMinus":{"@category":"Miscellaneous","@abbreviation":"+/-","#text":"3"},"PlusMinusPerGame":{"@category":"Miscellaneous","@abbreviation":"+/-/G","#text":"3.0"},"MinSeconds":{"@category":"Miscellaneous","@abbreviation":"MIN","#text":"803"},"MinSecondsPerGame":{"@category":"Miscellaneous","@abbreviation":"MIN/G","#text":"803.0"}}}]}}}}'
     http_version: 
-  recorded_at: Wed, 29 Nov 2017 07:46:57 GMT
+  recorded_at: Wed, 29 Nov 2017 11:41:40 GMT
+- request:
+    method: get
+    uri: https://api.mysportsfeeds.com/v1.1/pull/nba/2017-playoff/scoreboard.json?fordate=20170416
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - "<MySportsFeeds_AUTH>"
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/3.0.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 29 Nov 2017 11:41:41 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2777'
+      Connection:
+      - close
+      Set-Cookie:
+      - JSESSIONID=47324A36646FBA552A7833B7930DEF57; Path=/leaguemanager-web; HttpOnly
+      Cache-Control:
+      - must-revalidate, no-store, s-maxage=0, max-age=0, private
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, DELETE, PUT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Accept-CH, Accept-Charset, Accept-Datetime, Accept-Encoding, Accept-Ext,
+        Accept-Features, Accept-Language, Accept-Params, Accept-Ranges, Access-Control-Allow-Credentials,
+        Access-Control-Allow-Headers, Access-Control-Allow-Methods, Access-Control-Allow-Origin,
+        Access-Control-Expose-Headers, Access-Control-Max-Age, Access-Control-Request-Headers,
+        Access-Control-Request-Method, Age, Allow, Alternates, Authentication-Info,
+        Authorization, C-Ext, C-Man, C-Opt, C-PEP, C-PEP-Info, CONNECT, Cache-Control,
+        Compliance, Connection, Content-Base, Content-Disposition, Content-Encoding,
+        Content-ID, Content-Language, Content-Length, Content-Location, Content-MD5,
+        Content-Range, Content-Script-Type, Content-Security-Policy, Content-Style-Type,
+        Content-Transfer-Encoding, Content-Type, Content-Version, Cookie, Cost, DAV,
+        DELETE, DNT, DPR, Date, Default-Style, Delta-Base, Depth, Derived-From, Destination,
+        Differential-ID, Digest, ETag, Expect, Expires, Ext, From, GET, GetProfile,
+        HEAD, HTTP-date, Host, IM, If, If-Match, If-Modified-Since, If-None-Match,
+        If-Range, If-Unmodified-Since, Keep-Alive, Label, Last-Event-ID, Last-Modified,
+        Link, Location, Lock-Token, MIME-Version, Man, Max-Forwards, Media-Range,
+        Message-ID, Meter, Negotiate, Non-Compliance, OPTION, OPTIONS, OWS, Opt, Optional,
+        Ordering-Type, Origin, Overwrite, P3P, PEP, PICS-Label, POST, PUT, Pep-Info,
+        Permanent, Position, Pragma, ProfileObject, Protocol, Protocol-Query, Protocol-Request,
+        Proxy-Authenticate, Proxy-Authentication-Info, Proxy-Authorization, Proxy-Features,
+        Proxy-Instruction, Public, RWS, Range, Referer, Refresh, Resolution-Hint,
+        Resolver-Location, Retry-After, Safe, Sec-Websocket-Extensions, Sec-Websocket-Key,
+        Sec-Websocket-Origin, Sec-Websocket-Protocol, Sec-Websocket-Version, Security-Scheme,
+        Server, Set-Cookie, Set-Cookie2, SetProfile, SoapAction, Status, Status-URI,
+        Strict-Transport-Security, SubOK, Subst, Surrogate-Capability, Surrogate-Control,
+        TCN, TE, TRACE, Timeout, Title, Trailer, Transfer-Encoding, UA-Color, UA-Media,
+        UA-Pixels, UA-Resolution, UA-Windowpixels, URI, Upgrade, User-Agent, Variant-Vary,
+        Vary, Version, Via, Viewport-Width, WWW-Authenticate, Want-Digest, Warning,
+        Width, X-Content-Duration, X-Content-Security-Policy, X-Content-Type-Options,
+        X-CustomHeader, X-DNSPrefetch-Control, X-Forwarded-For, X-Forwarded-Port,
+        X-Forwarded-Proto, X-Frame-Options, X-Modified, X-OTHER, X-PING, X-PINGOTHER,
+        X-Powered-By, X-Requested-With
+    body:
+      encoding: ASCII-8BIT
+      string: '{"scoreboard":{"lastUpdatedOn":"2017-11-26 10:11:24 PM","gameScore":[{"game":{"ID":"40318","scheduleStatus":"Normal","originalDate":null,"originalTime":null,"delayedOrPostponedReason":null,"date":"2017-04-16","time":"1:00PM","awayTeam":{"ID":"91","City":"Atlanta","Name":"Hawks","Abbreviation":"ATL"},"homeTeam":{"ID":"94","City":"Washington","Name":"Wizards","Abbreviation":"WAS"},"location":"Verizon
+        Center"},"isUnplayed":"false","isInProgress":"false","isCompleted":"true","awayScore":"107","homeScore":"114","quarterSummary":{"quarter":[{"@number":"1","awayScore":"29","homeScore":"25"},{"@number":"2","awayScore":"19","homeScore":"20"},{"@number":"3","awayScore":"28","homeScore":"38"},{"@number":"4","awayScore":"31","homeScore":"31"}]}},{"game":{"ID":"40322","scheduleStatus":"Normal","originalDate":null,"originalTime":null,"delayedOrPostponedReason":null,"date":"2017-04-16","time":"3:30PM","awayTeam":{"ID":"97","City":"Portland","Name":"Trail
+        Blazers","Abbreviation":"POR"},"homeTeam":{"ID":"101","City":"Golden State","Name":"Warriors","Abbreviation":"GSW"},"location":"Oracle
+        Arena"},"isUnplayed":"false","isInProgress":"false","isCompleted":"true","awayScore":"109","homeScore":"121","quarterSummary":{"quarter":[{"@number":"1","awayScore":"27","homeScore":"31"},{"@number":"2","awayScore":"29","homeScore":"25"},{"@number":"3","awayScore":"32","homeScore":"32"},{"@number":"4","awayScore":"21","homeScore":"33"}]}},{"game":{"ID":"40306","scheduleStatus":"Normal","originalDate":null,"originalTime":null,"delayedOrPostponedReason":null,"date":"2017-04-16","time":"6:30PM","awayTeam":{"ID":"89","City":"Chicago","Name":"Bulls","Abbreviation":"CHI"},"homeTeam":{"ID":"82","City":"Boston","Name":"Celtics","Abbreviation":"BOS"},"location":"TD
+        Garden"},"isUnplayed":"false","isInProgress":"false","isCompleted":"true","awayScore":"106","homeScore":"102","quarterSummary":{"quarter":[{"@number":"1","awayScore":"23","homeScore":"28"},{"@number":"2","awayScore":"25","homeScore":"18"},{"@number":"3","awayScore":"26","homeScore":"28"},{"@number":"4","awayScore":"32","homeScore":"28"}]}},{"game":{"ID":"40330","scheduleStatus":"Normal","originalDate":null,"originalTime":null,"delayedOrPostponedReason":null,"date":"2017-04-16","time":"9:00PM","awayTeam":{"ID":"96","City":"Oklahoma
+        City","Name":"Thunder","Abbreviation":"OKL"},"homeTeam":{"ID":"109","City":"Houston","Name":"Rockets","Abbreviation":"HOU"},"location":"Toyota
+        Center"},"isUnplayed":"false","isInProgress":"false","isCompleted":"true","awayScore":"87","homeScore":"118","quarterSummary":{"quarter":[{"@number":"1","awayScore":"29","homeScore":"27"},{"@number":"2","awayScore":"25","homeScore":"32"},{"@number":"3","awayScore":"20","homeScore":"30"},{"@number":"4","awayScore":"13","homeScore":"29"}]}}]}}'
+    http_version: 
+  recorded_at: Wed, 29 Nov 2017 11:41:41 GMT
 - request:
     method: get
     uri: https://api.mysportsfeeds.com/v1.1/pull/nba/2017-playoff/game_boxscore.json?gameid=20170416-POR-GSW
@@ -768,7 +847,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 29 Nov 2017 07:47:12 GMT
+      - Wed, 29 Nov 2017 11:41:42 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -776,7 +855,7 @@ http_interactions:
       Connection:
       - close
       Set-Cookie:
-      - JSESSIONID=AD57538F7C46B9BBB52F109A7AADD92B; Path=/leaguemanager-web; HttpOnly
+      - JSESSIONID=6D2054811E6536A372E42628AF38EBAC; Path=/leaguemanager-web; HttpOnly
       Cache-Control:
       - must-revalidate, no-store, s-maxage=0, max-age=0, private
       Access-Control-Allow-Origin:
@@ -1491,5 +1570,76 @@ http_interactions:
         Throws","@abbreviation":"FTM/G","#text":"0.0"},"FtPct":{"@category":"Free
         Throws","@abbreviation":"FT%","#text":"0.0"},"OffReb":{"@category":"Rebounds","@abbreviation":"OREB","#text":"0"},"OffRebPerGame":{"@category":"Rebounds","@abbreviation":"OREB/G","#text":"0.0"},"DefReb":{"@category":"Rebounds","@abbreviation":"DREB","#text":"3"},"DefRebPerGame":{"@category":"Rebounds","@abbreviation":"DREB/G","#text":"3.0"},"Reb":{"@category":"Rebounds","@abbreviation":"REB","#text":"3"},"RebPerGame":{"@category":"Rebounds","@abbreviation":"REB/G","#text":"3.0"},"Ast":{"@category":"Offense","@abbreviation":"AST","#text":"2"},"AstPerGame":{"@category":"Offense","@abbreviation":"AST/G","#text":"2.0"},"Pts":{"@category":"Offense","@abbreviation":"PTS","#text":"0"},"PtsPerGame":{"@category":"Offense","@abbreviation":"PTS/G","#text":"0.0"},"Tov":{"@category":"Defense","@abbreviation":"TOV","#text":"1"},"TovPerGame":{"@category":"Defense","@abbreviation":"TOV/G","#text":"1.0"},"Stl":{"@category":"Defense","@abbreviation":"STL","#text":"0"},"StlPerGame":{"@category":"Defense","@abbreviation":"STL/G","#text":"0.0"},"Blk":{"@category":"Defense","@abbreviation":"BS","#text":"0"},"BlkPerGame":{"@category":"Defense","@abbreviation":"BS/G","#text":"0.0"},"BlkAgainst":{"@category":"Defense","@abbreviation":"BA","#text":"0"},"BlkAgainstPerGame":{"@category":"Defense","@abbreviation":"BA/G","#text":"0.0"},"Fouls":{"@category":"Miscellaneous","@abbreviation":"F","#text":"2"},"FoulsPerGame":{"@category":"Miscellaneous","@abbreviation":"F/G","#text":"2.0"},"FoulsDrawn":{"@category":"Miscellaneous","@abbreviation":"FD","#text":"0"},"FoulsDrawnPerGame":{"@category":"Miscellaneous","@abbreviation":"FD/G","#text":"0.0"},"FoulPers":{"@category":"Miscellaneous","@abbreviation":"PF","#text":"1"},"FoulPersPerGame":{"@category":"Miscellaneous","@abbreviation":"PF/G","#text":"1.0"},"FoulPersDrawn":{"@category":"Miscellaneous","@abbreviation":"PFD","#text":"1"},"FoulPersDrawnPerGame":{"@category":"Miscellaneous","@abbreviation":"PFD/G","#text":"1.0"},"FoulTech":{"@category":"Miscellaneous","@abbreviation":"TF","#text":"0"},"FoulTechPerGame":{"@category":"Miscellaneous","@abbreviation":"TF/G","#text":"0.0"},"FoulTechDrawn":{"@category":"Miscellaneous","@abbreviation":"TFD","#text":"0"},"FoulTechDrawnPerGame":{"@category":"Miscellaneous","@abbreviation":"TFD/G","#text":"0.0"},"FoulFlag1":{"@category":"Miscellaneous","@abbreviation":"FF1","#text":"0"},"FoulFlag1PerGame":{"@category":"Miscellaneous","@abbreviation":"FF1/G","#text":"0.0"},"FoulFlag1Drawn":{"@category":"Miscellaneous","@abbreviation":"FF1D","#text":"0"},"FoulFlag1DrawnPerGame":{"@category":"Miscellaneous","@abbreviation":"FF1D/G","#text":"0.0"},"FoulFlag2":{"@category":"Miscellaneous","@abbreviation":"FF2","#text":"0"},"FoulFlag2PerGame":{"@category":"Miscellaneous","@abbreviation":"FF2/G","#text":"0.0"},"FoulFlag2Drawn":{"@category":"Miscellaneous","@abbreviation":"FF2D","#text":"0"},"FoulFlag2DrawnPerGame":{"@category":"Miscellaneous","@abbreviation":"FF2D/G","#text":"0.0"},"Ejections":{"@category":"Miscellaneous","@abbreviation":"EJE","#text":"0"},"PlusMinus":{"@category":"Miscellaneous","@abbreviation":"+/-","#text":"3"},"PlusMinusPerGame":{"@category":"Miscellaneous","@abbreviation":"+/-/G","#text":"3.0"},"MinSeconds":{"@category":"Miscellaneous","@abbreviation":"MIN","#text":"803"},"MinSecondsPerGame":{"@category":"Miscellaneous","@abbreviation":"MIN/G","#text":"803.0"}}}]}}}}'
     http_version: 
-  recorded_at: Wed, 29 Nov 2017 07:47:18 GMT
+  recorded_at: Wed, 29 Nov 2017 11:41:43 GMT
+- request:
+    method: get
+    uri: https://api.mysportsfeeds.com/v1.1/pull/nba/2017-playoff/game_boxscore.json?gameid=GGGameId
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - "<MySportsFeeds_AUTH>"
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/3.0.0
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 29 Nov 2017 11:41:45 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - close
+      Set-Cookie:
+      - JSESSIONID=5FA705C721AC9FC89A13545C20071E50; Path=/leaguemanager-web; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, DELETE, PUT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Accept-CH, Accept-Charset, Accept-Datetime, Accept-Encoding, Accept-Ext,
+        Accept-Features, Accept-Language, Accept-Params, Accept-Ranges, Access-Control-Allow-Credentials,
+        Access-Control-Allow-Headers, Access-Control-Allow-Methods, Access-Control-Allow-Origin,
+        Access-Control-Expose-Headers, Access-Control-Max-Age, Access-Control-Request-Headers,
+        Access-Control-Request-Method, Age, Allow, Alternates, Authentication-Info,
+        Authorization, C-Ext, C-Man, C-Opt, C-PEP, C-PEP-Info, CONNECT, Cache-Control,
+        Compliance, Connection, Content-Base, Content-Disposition, Content-Encoding,
+        Content-ID, Content-Language, Content-Length, Content-Location, Content-MD5,
+        Content-Range, Content-Script-Type, Content-Security-Policy, Content-Style-Type,
+        Content-Transfer-Encoding, Content-Type, Content-Version, Cookie, Cost, DAV,
+        DELETE, DNT, DPR, Date, Default-Style, Delta-Base, Depth, Derived-From, Destination,
+        Differential-ID, Digest, ETag, Expect, Expires, Ext, From, GET, GetProfile,
+        HEAD, HTTP-date, Host, IM, If, If-Match, If-Modified-Since, If-None-Match,
+        If-Range, If-Unmodified-Since, Keep-Alive, Label, Last-Event-ID, Last-Modified,
+        Link, Location, Lock-Token, MIME-Version, Man, Max-Forwards, Media-Range,
+        Message-ID, Meter, Negotiate, Non-Compliance, OPTION, OPTIONS, OWS, Opt, Optional,
+        Ordering-Type, Origin, Overwrite, P3P, PEP, PICS-Label, POST, PUT, Pep-Info,
+        Permanent, Position, Pragma, ProfileObject, Protocol, Protocol-Query, Protocol-Request,
+        Proxy-Authenticate, Proxy-Authentication-Info, Proxy-Authorization, Proxy-Features,
+        Proxy-Instruction, Public, RWS, Range, Referer, Refresh, Resolution-Hint,
+        Resolver-Location, Retry-After, Safe, Sec-Websocket-Extensions, Sec-Websocket-Key,
+        Sec-Websocket-Origin, Sec-Websocket-Protocol, Sec-Websocket-Version, Security-Scheme,
+        Server, Set-Cookie, Set-Cookie2, SetProfile, SoapAction, Status, Status-URI,
+        Strict-Transport-Security, SubOK, Subst, Surrogate-Capability, Surrogate-Control,
+        TCN, TE, TRACE, Timeout, Title, Trailer, Transfer-Encoding, UA-Color, UA-Media,
+        UA-Pixels, UA-Resolution, UA-Windowpixels, URI, Upgrade, User-Agent, Variant-Vary,
+        Vary, Version, Via, Viewport-Width, WWW-Authenticate, Want-Digest, Warning,
+        Width, X-Content-Duration, X-Content-Security-Policy, X-Content-Type-Options,
+        X-CustomHeader, X-DNSPrefetch-Control, X-Forwarded-For, X-Forwarded-Port,
+        X-Forwarded-Proto, X-Frame-Options, X-Modified, X-OTHER, X-PING, X-PINGOTHER,
+        X-Powered-By, X-Requested-With
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    http_version: 
+  recorded_at: Wed, 29 Nov 2017 11:41:45 GMT
 recorded_with: VCR 3.0.3

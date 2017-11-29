@@ -42,6 +42,7 @@ module NBAStats
                 season: season,
                 game_id: game_id
               )
+              puts service_result
               #puts service_result
               http_response = HttpResponseRepresenter.new(service_result.value)
               response.status = http_response.http_code
@@ -95,7 +96,7 @@ module NBAStats
               find_result = FindDatabaseSchedule.call(
                 date: date
               )
-              #puts find_result
+              puts find_result
               http_response = HttpResponseRepresenter.new(find_result.value)
               response.status = http_response.http_code
               #puts find_result.value.message.class
@@ -112,7 +113,7 @@ module NBAStats
                 season: season,
                 date: date
               )
-              #puts service_result
+              puts service_result
               http_response = HttpResponseRepresenter.new(service_result.value)
               response.status = http_response.http_code
               if service_result.success?
