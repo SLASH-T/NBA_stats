@@ -4,7 +4,8 @@ module NBAStats
   module Repository
     For = {
       Entity::GameInfo    => GameInfos,
-      Entity::PlayerData  => PlayerDatas
+      Entity::PlayerData  => PlayerDatas,
+      Entity::Schedule    => Schedules
     }.freeze
   end
 end

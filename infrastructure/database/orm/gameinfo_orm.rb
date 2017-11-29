@@ -7,8 +7,8 @@ module NBAStats
 
       one_to_many :players,
                    class: :'NBAStats::Database::PlayerOrm'
-      many_to_one :schedules,
-                   class: :'NBAStats::Database::ScheduleOrm'
+      #many_to_one :schedule,
+      #             class: :'NBAStats::Database::ScheduleOrm'
 
       plugin :timestamps, update_on_create: true
     end

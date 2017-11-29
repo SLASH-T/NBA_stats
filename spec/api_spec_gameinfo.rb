@@ -20,9 +20,11 @@ describe 'Tests Api functionality' do
     before do
       app.DB[:gameinfos].delete
       app.DB[:players].delete
+      app.DB[:schedules].delete
     end
 
-    describe 'POSTting to create entities from MySportsFeeds' do
+    describe 'POSTting to create entities from MySportsFeeds',:order => :defined do
+
       it 'HAPPY: should retrieve and store game info and player performance' do
         post "#{API_VER}/game_info/#{SEASON}/#{GAMEID}"
         _(last_response.status).must_equal 201
@@ -42,9 +44,27 @@ describe 'Tests Api functionality' do
         post "#{API_VER}/game_info/#{SEASON}/#{GAMEID}"
         _(last_response.status).must_equal 409
       end
+
+
+      it 'HAPPY: should retrieve and store player info' do
+        post "#{API_VER}/player_info/#{SEASON}/#{GAMEID}"
+        _(last_response.status).must_equal 201
+        _(last_response.header['Location'].size).must_be :>, 0
+        player_data = JSON.parse last_response.body
+        _(player_data.size).must_be :>, 0
+      end
+
+      it 'HAPPY: should retrieve and store schedule info' do
+        post "#{API_VER}/schedule/#{SEASON}/#{DATE}"
+        _(last_response.status).must_equal 201
+        _(last_response.header['Location'].size).must_be :>, 0
+        schedule_data = JSON.parse last_response.body
+        _(schedule_data.size).must_be :>, 0
+      end
+
     end
 
-    describe 'GETing database entities' do
+    describe 'GETing database entities',:order => :defined do
       before do
         post "#{API_VER}/game_info/#{SEASON}/#{GAMEID}"
       end
@@ -61,5 +81,6 @@ describe 'Tests Api functionality' do
         _(last_response.status).must_equal 404
       end
     end
+
   end
 end

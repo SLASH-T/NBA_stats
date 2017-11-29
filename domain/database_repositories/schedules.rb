@@ -8,85 +8,53 @@ module NBAStats
       #end
 
       def self.find(entity)
-        find_id(entity.game_id)
+        entity.each { |dates| find_schedule(dates.date) }
       end
 
-      def self.find_id(game_id)
-        Database::PlayerOrm.where(game_id: game_id).all.map { |db_record| rebuild_entity(db_record) }
+      def self.find_schedule(date)
+        puts "&&&&&&"
+        Database::ScheduleOrm.where(date: date).all.map { |db_record|  puts db_record }
+        #db_record = Database::ScheduleOrm.first(date: date)
+        #puts db_record.class
+        #rebuild_entity(db_record)
       end
 
-      def self.find_player_name(player_name)
-      	db_record = Database::PlayerOrm.first(player_name: player_name)
+      def self.find_one(date)
+        db_record = Database::ScheduleOrm.first(date: date[0].date)
         rebuild_entity(db_record)
       end
 
       def self.find_or_create(entity)
-        (find_id(entity.game_id) && find_player_name(entity.player_name)) || create_form(entity)
+        find_schedule(entity.date) || create_form(entity)
       end
 
       def self.create_form(entity)
         #raise 'Repo already exists' if find_id(entity.game_id) && find_player_name(entity.player_name)
-        db_gameinfo = Database::GameInfoOrm.find_or_create(origin_id: entity.game_id)
-
-      	db_player = Database::PlayerOrm.create(
-      		origin_id:   entity.origin_id,
-      		gameinfo_id: db_gameinfo.id,
-          game_id:     entity.game_id,
-      		team_name:   entity.team_name,
-      		player_name: entity.player_name,
-      		FGM:         entity.FGM,
-      		FGA:         entity.FGA,
-      		FGP:         entity.FGP,
-      		TPM:         entity.TPM,
-      		TPP:         entity.TPP,
-      		TPA:         entity.TPA,
-      		FTM:         entity.FTM,
-      		FTA:         entity.FTA,
-      		FTP:         entity.FTP,
-      		OREB:        entity.OREB,
-      		DREB:        entity.DREB,
-      		REB:         entity.REB,
-      		AST:         entity.AST,
-      		TOV:         entity.TOV,
-      		STL:         entity.STL,
-      		BLK:         entity.BLK,
-      		PF:          entity.PF,
-      		PTS:         entity.PTS,
-      		PM:          entity.PM
-      	)
-
-        self.rebuild_entity(db_player)
+        entity.each do |schedule|
+          db_schedule = Database::ScheduleOrm.create(
+        		date:           schedule.date,
+        		location:       schedule.location,
+            away_team:      schedule.away_team,
+        		home_team:      schedule.home_team,
+        		gameplayed_tag: schedule.gameplayed_tag,
+        		away_score:     schedule.away_score,
+        		home_score:     schedule.home_score
+        	)
+          self.rebuild_entity(db_schedule)
+        end
       end
 
       def self.rebuild_entity(db_record)
       	return nil unless db_record
-
-      	Entity::PlayerData.new(
-          id: db_record.id,
-      		origin_id:   db_record.origin_id,
-      		gameinfo_id: db_record.gameinfo_id,
-          game_id:     db_record.game_id,
-      		team_name:   db_record.team_name,
-      		player_name: db_record.player_name,
-      		FGM:         db_record.FGM,
-      		FGA:         db_record.FGA,
-      		FGP:         db_record.FGP,
-      		TPM:         db_record.TPM,
-      		TPP:         db_record.TPP,
-      		TPA:         db_record.TPA,
-      		FTM:         db_record.FTM,
-      		FTA:         db_record.FTA,
-      		FTP:         db_record.FTP,
-      		OREB:        db_record.OREB,
-      		DREB:        db_record.DREB,
-      		REB:         db_record.REB,
-      		AST:         db_record.AST,
-      		TOV:         db_record.TOV,
-      		STL:         db_record.STL,
-      		BLK:         db_record.BLK,
-      		PF:          db_record.PF,
-      		PTS:         db_record.PTS,
-      		PM:          db_record.PM
+      	Entity::Schedule.new(
+          id:              db_record.id,
+      		date:            db_record.date,
+      		location:        db_record.location,
+          away_team:       db_record.away_team,
+      		home_team:       db_record.home_team,
+      		gameplayed_tag:  db_record.gameplayed_tag,
+      		away_score:      db_record.away_score,
+      		home_score:      db_record.home_score
       		)
       end
     end

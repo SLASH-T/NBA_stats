@@ -11,8 +11,14 @@ module NBAStats
         find_id(entity.game_id)
       end
 
+      def self.find_one(entity)
+        db_record = Database::PlayerOrm.first(game_id: entity[0].game_id)
+        rebuild_entity(db_record)
+      end
+
       def self.find_id(game_id)
-        Database::PlayerOrm.where(game_id: game_id).all.map { |db_record| rebuild_entity(db_record) }
+        Database::PlayerOrm.where(game_id: game_id).all.map { |db_record|
+          rebuild_entity(db_record) }
       end
 
       def self.find_player_name(player_name)
@@ -27,7 +33,6 @@ module NBAStats
       def self.create_form(entity)
         #raise 'Repo already exists' if find_id(entity.game_id) && find_player_name(entity.player_name)
         db_gameinfo = Database::GameInfoOrm.find_or_create(origin_id: entity.game_id)
-
       	db_player = Database::PlayerOrm.create(
       		origin_id:   entity.origin_id,
       		gameinfo_id: db_gameinfo.id,
