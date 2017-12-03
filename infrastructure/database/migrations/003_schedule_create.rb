@@ -10,6 +10,8 @@ Sequel.migration do
       String      :location
       String      :away_team
       String      :home_team
+      String      :away_abbreviation
+      String      :home_abbreviation
       String      :gameplayed_tag
       String      :away_score
       String      :home_score
