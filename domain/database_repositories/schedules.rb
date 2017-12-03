@@ -37,6 +37,8 @@ module NBAStats
             location:       schedule.location,
             away_team:      schedule.away_team,
             home_team:      schedule.home_team,
+            away_abbreviation: schedule.away_abbreviation,
+            home_abbreviation: schedule.home_abbreviation,
             gameplayed_tag: schedule.gameplayed_tag,
             away_score:     schedule.away_score,
             home_score:     schedule.home_score
@@ -53,6 +55,8 @@ module NBAStats
           location:        db_record.location,
           away_team:       db_record.away_team,
           home_team:       db_record.home_team,
+          away_abbreviation: db_record.away_abbreviation,
+          home_abbreviation: db_record.home_abbreviation,
           gameplayed_tag:  db_record.gameplayed_tag,
           away_score:      db_record.away_score,
           home_score:      db_record.home_score

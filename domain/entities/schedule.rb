@@ -11,6 +11,8 @@ module NBAStats
       attribute :location, Types::Strict::String.optional
       attribute :away_team, Types::Strict::String.optional
       attribute :home_team, Types::Strict::String.optional
+      attribute :away_abbreviation, Types::Strict::String.optional
+      attribute :home_abbreviation, Types::Strict::String.optional
       attribute :gameplayed_tag, Types::Strict::String.optional
       attribute :away_score, Types::Strict::String.optional
       attribute :home_score, Types::Strict::String.optional

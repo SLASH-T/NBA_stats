@@ -38,6 +38,8 @@ module NBAStats
             location: location,
             away_team: away_team,
             home_team: home_team,
+            away_abbreviation: away_abbreviation,
+            home_abbreviation: home_abbreviation,
             gameplayed_tag: gameplayed_tag,
             away_score: away_score,
             home_score: home_score
@@ -58,6 +60,14 @@ module NBAStats
         def home_team
           @game_data['game']['homeTeam']['City']\
           + @game_data['game']['homeTeam']['Name']
+        end
+
+        def away_abbreviation
+          @game_data['game']['awayTeam']['Abbreviation']
+        end
+
+        def home_abbreviation
+          @game_data['game']['homeTeam']['Abbreviation']
         end
 
         def gameplayed_tag
