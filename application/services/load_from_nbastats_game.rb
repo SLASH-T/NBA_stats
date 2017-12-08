@@ -15,7 +15,7 @@ module NBAStats
       game_info = MSFData::GameInfoMapper.new(input[:config])
                                          .load_data(input[:season], input[:game_id])
 
-      #puts game_info
+      # puts game_info
       Right(game_info: game_info)
     rescue StandardError
       Left(Result.new(:bad_request, 'MSF gameinfo data not found'))
