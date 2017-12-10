@@ -21,11 +21,19 @@ class CloneWorker
   shoryuken_options queue: config.CLONE_QUEUE_URL, auto_delete: true
 
   def perform(_sqs_msg, worker_request)
+    extend Econfig::Shortcut
+    Econfig.env = ENV['RACK_ENV'] || 'development'
+    Econfig.root = File.expand_path('..', File.dirname(__FILE__))
+      info = worker_request.split('!')
+      # puts info[0]
+      # puts info[1]
+
     request = NBAStats::LoadFromSchedule.new.call(
-      config: worker_request[0],
-      season: worker_request[1],
-      date: worker_request[2]
-    ) 
+      config: config,
+      season: info[0],
+      date: info[1]
+    )
+
     puts "REQUEST: #{request}"
   end
 end

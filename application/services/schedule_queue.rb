@@ -10,16 +10,11 @@ module NBAStats
     step :schedule_exist
 
     def schedule_exist(input)
-      puts "666666"
       if !input[:find_result].empty?
-        puts "777777"
         Right(input[:find_result])
       else
-        puts "8888888"
-        loadmsg = []
-        loadmsg.push(input[:config])
-        loadmsg.push(input[:season])
-        loadmsg.push(input[:date])
+        loadmsg = input[:season] + "!" + input[:date]
+        puts loadmsg
         CloneWorker.perform_async(loadmsg)
         Left(Result.new(:processing, 'Processing the summary request'))
       end

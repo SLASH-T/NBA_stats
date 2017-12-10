@@ -15,8 +15,6 @@ module NBAStats
           )
           puts find_result
 
-          
-
           if find_result.value.message.empty?
             service_result = ScheduleQueue.new.call(
               find_result: find_result.value.message,
@@ -32,7 +30,6 @@ module NBAStats
             )
             puts service_result
 =end
-            puts "--------"
             puts service_result
             http_response = HttpResponseRepresenter.new(service_result.value)
             response.status = http_response.http_code
