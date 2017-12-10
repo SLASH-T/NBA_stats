@@ -6,6 +6,10 @@ source 'https://rubygems.org'
 # Networking gems
 gem 'http'
 
+# Worker gems
+gem 'aws-sdk-sqs', '~> 1'
+gem 'shoryuken', '~> 3'
+
 # Web app related
 gem 'econfig'
 gem 'pry' # to run console in production
@@ -50,5 +54,5 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg'
+  # gem 'pg'
 end
