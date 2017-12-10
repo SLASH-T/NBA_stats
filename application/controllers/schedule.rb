@@ -38,17 +38,21 @@ module NBAStats
               SchedulesRepresenter.new(Schedules.new(service_result.value.message)).to_json
               find_result.value.message = service_result.value.message
             else
+              puts "------"
+              puts http_response.to_json
+              puts "------"
               http_response.to_json
             end
-          end
 
-          http_response = HttpResponseRepresenter.new(find_result.value)
-          response.status = http_response.http_code
-          # puts find_result.value.message.class
-          if find_result.success?
-            SchedulesRepresenter.new(Schedules.new(find_result.value.message)).to_json
           else
-            http_response.to_json
+            http_response = HttpResponseRepresenter.new(find_result.value)
+            response.status = http_response.http_code
+            # puts find_result.value.message.class
+            if find_result.success?
+              SchedulesRepresenter.new(Schedules.new(find_result.value.message)).to_json
+            else
+              http_response.to_json
+            end
           end
         end
         # POST '/api/v0.1/repo/:ownername/:reponame
