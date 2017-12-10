@@ -34,6 +34,12 @@ namespace :db do
   end
 end
 
+task :config do
+  require_relative 'config/environment.rb' # load config info
+  @app = NBAStats::Api
+  @config = @app.config
+end
+
 desc 'run tests'
 Rake::TestTask.new(:spec) do |t|
   t.pattern = 'spec/*_spec.rb'

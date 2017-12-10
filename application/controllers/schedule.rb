@@ -14,12 +14,25 @@ module NBAStats
             date: date
           )
           puts find_result
+
+          
+
           if find_result.value.message.empty?
+            service_result = ScheduleQueue.new.call(
+              find_result: find_result.value.message,
+              config: app.config,
+              season: season,
+              date: date
+            )
+=begin
             service_result = LoadFromSchedule.new.call(
               config: app.config,
               season: season,
               date: date
             )
+            puts service_result
+=end
+            puts "--------"
             puts service_result
             http_response = HttpResponseRepresenter.new(service_result.value)
             response.status = http_response.http_code
@@ -31,6 +44,7 @@ module NBAStats
               http_response.to_json
             end
           end
+
           http_response = HttpResponseRepresenter.new(find_result.value)
           response.status = http_response.http_code
           # puts find_result.value.message.class
