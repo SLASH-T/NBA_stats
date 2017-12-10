@@ -18,8 +18,8 @@ describe 'Tests Api functionality' do
 
   describe 'Game information' do
     before do
-      app.DB[:gameinfos].delete
       app.DB[:players].delete
+      app.DB[:gameinfos].delete
       app.DB[:schedules].delete
     end
 

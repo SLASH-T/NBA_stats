@@ -15,7 +15,6 @@ module NBAStats
 
     route do |routing|
       app = Api
-
       # GET/ request
       routing.root do
         { 'message' => "NBAStats API v0.1 up in #{app.environment} mode" }
