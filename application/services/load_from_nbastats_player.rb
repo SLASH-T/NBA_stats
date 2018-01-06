@@ -29,8 +29,14 @@ module NBAStats
 
     def store_player_in_repository(input)
       stored_player = []
-      input[:player].map { |x| stored_player.push(Repository::PlayerDatas.create_form(x)) }
-      #stored_player = Repository::PlayerDatas.create_form(input[:player])
+      # input[:player].map { |x| stored_player.push(Repository::PlayerDatas.create_form(x)) }
+      # stored_player = Repository::PlayerDatas.create_form(input[:player])
+
+      input[:player].map do |x|
+        # puts x.class
+        rank = NBAStats::Ranking::RankingSystem.new(x).ranking
+        stored_player.push(Repository::PlayerDatas.create_form(x, rank))
+      end
 
       Right(Result.new(:created, stored_player))
     rescue StandardError => e

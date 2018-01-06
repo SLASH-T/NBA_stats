@@ -67,14 +67,13 @@ module NBAStats
           find_result = FindDatabasePlayer.call(
             game_id: game_id
           )
-
           if find_result.value.message.empty?
             service_result = LoadFromNBAstatsPlayer.new.call(
               config: app.config,
               season: season,
               game_id: game_id
             )
-            # puts service_result
+            puts service_result
             http_response = HttpResponseRepresenter.new(service_result.value)
             response.status = http_response.http_code
             if service_result.success?

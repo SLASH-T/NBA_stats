@@ -33,6 +33,7 @@ module NBAStats
       attribute :PF, Types::Strict::String.optional
       attribute :PTS, Types::Strict::String.optional
       attribute :PM, Types::Strict::String.optional
+      attribute :RK, Types::Strict::Float.optional
     end
   end
 end

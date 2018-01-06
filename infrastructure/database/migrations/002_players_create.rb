@@ -30,6 +30,7 @@ Sequel.migration do
       String      :PF
       String      :PTS
       String      :PM
+      Float       :RK
 
       DateTime :created_at
       DateTime :updated_at

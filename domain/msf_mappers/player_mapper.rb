@@ -76,7 +76,8 @@ module NBAStats
             BLK: blk,
             PF: pf,
             PTS: pts,
-            PM: pm
+            PM: pm,
+            RK: rk
           )
         end
 
@@ -172,6 +173,10 @@ module NBAStats
 
         def pm
           @player_data['stats']['PlusMinus']['#text']
+        end
+
+        def rk
+          0.0
         end
       end
     end

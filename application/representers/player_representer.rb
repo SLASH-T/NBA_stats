@@ -26,5 +26,6 @@ module NBAStats
     property :PF
     property :PTS
     property :PM
+    property :RK
   end
 end
