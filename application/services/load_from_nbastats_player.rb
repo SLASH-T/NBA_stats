@@ -28,6 +28,7 @@ module NBAStats
     end
 
     def store_player_in_repository(input)
+      puts input
       stored_player = []
       # input[:player].map { |x| stored_player.push(Repository::PlayerDatas.create_form(x)) }
       # stored_player = Repository::PlayerDatas.create_form(input[:player])
@@ -35,8 +36,11 @@ module NBAStats
       input[:player].map do |x|
         # puts x.class
         rank = NBAStats::Ranking::RankingSystem.new(x).ranking
+        puts rank
+        puts "-----"
         stored_player.push(Repository::PlayerDatas.create_form(x, rank))
       end
+      puts stored_player
 
       Right(Result.new(:created, stored_player))
     rescue StandardError => e
