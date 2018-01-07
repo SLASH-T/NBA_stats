@@ -33,6 +33,8 @@ module NBAStats
       def self.create_form(entity, rank)
         #raise 'Repo already exists' if find_id(entity.game_id) && find_player_name(entity.player_name)
         db_gameinfo = Database::GameInfoOrm.find_or_create(origin_id: entity.game_id)
+        puts "db_game"
+        puts db_gameinfo
         db_player = Database::PlayerOrm.create(
           origin_id:   entity.origin_id,
           gameinfo_id: db_gameinfo.id,
@@ -65,8 +67,10 @@ module NBAStats
       end
 
       def self.rebuild_entity(db_record)
+        puts "GG"
         return nil unless db_record
-
+        puts "in"
+        puts db_record
         Entity::PlayerData.new(
           id: db_record.id,
           origin_id:   db_record.origin_id,
